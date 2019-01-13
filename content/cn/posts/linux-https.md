@@ -58,7 +58,7 @@ vim httpd-vhosts.conf
     ServerName www.example.com:443                                         
     SSLEngine on                                                              
     SSLCertificateFile "/opt/lampp/etc/ssl/public.pem"             
-    SSLCertificateKeyFile "/opt/lampp/etc/ssl/订单号.key"                                                       
+    SSLCertificateKeyFile "/opt/lampp/etc/ssl/订单号.key"     
     SSLCertificateChainFile "/opt/lampp/etc/ssl/chain.pem"               
     ErrorLog "logs/www.example.com-error_log"                              
     CustomLog "logs/www.example.com-access_log" common                     
