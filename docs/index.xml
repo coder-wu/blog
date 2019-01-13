@@ -149,7 +149,7 @@ outer: for ( ; ; ) { for ( ; ; ) { ··· break outer; } }  Java方法的参数�
     </item>
     
     <item>
-      <title>JavaScript | 步请求保存返回结果，异步同步的区别</title>
+      <title>JavaScript | 异步请求保存返回结果，异步同步的区别</title>
       <link>https://blog.coderwu.com/posts/javascript-ajax_async/</link>
       <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
       
