@@ -21,6 +21,11 @@
                 {{ end }}
                 {{ end }}
               </div> -->
+              <div class="row">
+                <div class="lang-switch col-xs-3 col-xs-offset-9">
+                  {{ .Site.Author.mail }}
+                </div>
+              </div>
               <div id="posts-list">
                 {{ range .Data.Pages.GroupByDate "2006" -}}
                 <section>

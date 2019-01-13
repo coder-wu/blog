@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.53" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="coderWu" />
+  <meta property="og:url" content="https://blog.coderwu.com/posts/algorithm-a_b/" />
+  <link rel="canonical" href="https://blog.coderwu.com/posts/algorithm-a_b/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https://blog.coderwu.com/"
+      },
+      "articleSection" : "posts",
+      "name" : "算法 | 不使用数学运算符求两整数和",
+      "headline" : "算法 | 不使用数学运算符求两整数和",
+      "description" : "题目来自 lintcode A+B问题
+描述
+给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
+样例 如果 a=1 并且 b=2，返回3
+代码：
+public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators. if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp; b) &lt;&lt; 1; return aplusb(XOresult, carry); }  注意点：
+与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用",
+      "inLanguage" : "en-US",
+      "author" : "coderWu",
+      "creator" : "coderWu",
+      "publisher": "coderWu",
+      "accountablePerson" : "coderWu",
+      "copyrightHolder" : "coderWu",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-07-10 00:00:00 &#43;0000 UTC",
+      "dateModified" : "2017-07-10 00:00:00 &#43;0000 UTC",
+      "url" : "https://blog.coderwu.com/posts/algorithm-a_b/",
+      "keywords" : [ "Blog", "coderWu" ]
+  }
+</script>
+<title>算法 | 不使用数学运算符求两整数和 - coderWu</title>
+  <meta property="og:title" content="算法 | 不使用数学运算符求两整数和 - coderWu" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="题目来自 lintcode A&#43;B问题
+描述
+给出两个整数a和b, 求他们的和, 但不能使用 &#43; 等数学运算符。
+样例 如果 a=1 并且 b=2，返回3
+代码：
+public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators. if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp; b) &lt;&lt; 1; return aplusb(XOresult, carry); }  注意点：
+与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+</head>
+
+
+  <body>
+    <article class="post Chinese" id="article">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <a href="/">
+            <div class="head-line"></div>
+          </a>
+          <header class="post-header">
+            <h1 class="post-title">算法 | 不使用数学运算符求两整数和</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <time class="post-date" datetime="2017-07-10 00:00:00 UTC">
+                  10 Jul 2017
+                </time>
+              </div>
+              <div class="col-xs-6">
+                <div class="post-author">
+                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          <div class="post-content markdown-body">
+            <p>题目来自  <a href="http://www.lintcode.com/zh-cn/problem/a-b-problem/?rand=true">lintcode A+B问题</a></p>
+
+<p><strong>描述</strong></p>
+
+<p>给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。</p>
+
+<p><strong>样例</strong>
+如果 a=1 并且 b=2，返回3</p>
+
+<p>代码：</p>
+
+<pre><code class="language-java">    public int aplusb(int a, int b) {
+        // write your code here, try to do it without arithmetic operators.
+        if (b == 0) {
+            return a;
+        }
+        int XOresult = a ^ b;
+        int carry = (a &amp; b) &lt;&lt; 1;
+        return aplusb(XOresult, carry);
+    }
+</code></pre>
+
+<p>注意点：</p>
+
+<p>与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用</p>
+
+          </div>
+          
+        </div>
+      </div>
+    </article>
+    coderwumail@gmail.com
+    <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.53" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="coderWu" />
+  <meta property="og:url" content="https://blog.coderwu.com/posts/php-zhihu_crawling/" />
+  <link rel="canonical" href="https://blog.coderwu.com/posts/php-zhihu_crawling/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https://blog.coderwu.com/"
+      },
+      "articleSection" : "posts",
+      "name" : "PHP | 闲来无事写个知乎爬虫",
+      "headline" : "PHP | 闲来无事写个知乎爬虫",
+      "description" : "知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
+&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&quot;image/&quot; . $this-&gt;question)) { mkdir (&quot;image/&quot; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content['data'])) { foreach ($content['data'] as $key =&gt; $value) { preg_match_all(&quot;/&lt;img.",
+      "inLanguage" : "en-US",
+      "author" : "coderWu",
+      "creator" : "coderWu",
+      "publisher": "coderWu",
+      "accountablePerson" : "coderWu",
+      "copyrightHolder" : "coderWu",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-04-25 00:00:00 &#43;0000 UTC",
+      "dateModified" : "2017-04-25 00:00:00 &#43;0000 UTC",
+      "url" : "https://blog.coderwu.com/posts/php-zhihu_crawling/",
+      "keywords" : [ "Blog", "coderWu" ]
+  }
+</script>
+<title>PHP | 闲来无事写个知乎爬虫 - coderWu</title>
+  <meta property="og:title" content="PHP | 闲来无事写个知乎爬虫 - coderWu" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
+&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&quot;image/&quot; . $this-&gt;question)) { mkdir (&quot;image/&quot; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&gt; $value) { preg_match_all(&quot;/&lt;img." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+</head>
+
+
+  <body>
+    <article class="post Chinese" id="article">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <a href="/">
+            <div class="head-line"></div>
+          </a>
+          <header class="post-header">
+            <h1 class="post-title">PHP | 闲来无事写个知乎爬虫</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <time class="post-date" datetime="2017-04-25 00:00:00 UTC">
+                  25 Apr 2017
+                </time>
+              </div>
+              <div class="col-xs-6">
+                <div class="post-author">
+                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          <div class="post-content markdown-body">
+            <p>知乎刷多了，就想做点好玩的&hellip;&hellip;
+可以爬知乎某个问题下的所有回答中所包含的图片。
+错误没有完全处理，容错性可能不太好。
+代码：</p>
+
+<pre><code class="language-php">&lt;?php
+
+/**
+ * Created by PhpStorm.
+ * User: Jehu
+ * Date: 2017/4/25
+ * Time: 18:06
+ */
+
+class Zhihu {
+
+    private $hasDone = 0;
+
+    private $question;
+
+    function __construct(string $question) {
+        $this-&gt;question = $question;
+        if (!file_exists(&quot;image/&quot; . $this-&gt;question)) {
+            mkdir (&quot;image/&quot; . $this-&gt;question);
+        }
+    }
+
+    public function getHasDone(): int{
+        return $this-&gt;hasDone;
+    }
+
+    public function setHasDone(int $hasDone){
+        $this-&gt;hasDone = $hasDone;
+    }
+
+    public function saveImg(array $content) {
+        if (isset($content['data'])) {
+            foreach ($content['data'] as $key =&gt; $value) {
+                preg_match_all(&quot;/&lt;img.*?&gt;/&quot;, $value['content'], $result);
+                if (count($result[0]) &gt; 0) {
+                    foreach ($result[0] as $k =&gt; $v) {
+                        preg_match(&quot;/src=\&quot;.*?\&quot;/&quot;, $v, $result);
+                        $result = str_replace('src=', &quot;&quot;, $result[0]);
+                        $imgUrl = str_replace('&quot;', &quot;&quot;, $result);
+                        if ($imgUrl != &quot;//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg&quot;) {
+                            preg_match('((?&lt;=(com/))[\w\W]*)', $imgUrl, $imgName);
+                            $imgName = $imgName[0];
+                            $filePath = &quot;image/&quot; . $this-&gt;question . &quot;/&quot; . $imgName;
+                            if (!file_exists($filePath)) {
+                                file_put_contents($filePath, file_get_contents($imgUrl));
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    public function doIt(string $url) : string {
+        $cookie = &quot;&quot;;//设置成自己账号登陆知乎的Cookie
+        $ch = curl_init();
+        curl_setopt_array($ch, array(
+            CURLOPT_URL =&gt; $url,
+            CURLOPT_HTTPHEADER =&gt; [
+                &quot;accept:application/json, text/plain, */*&quot;,
+                &quot;Accept-Encoding:gzip, deflate, sdch, br&quot;,
+                &quot;Accept-Language:zh-CN,zh;q=0.8&quot;,
+                &quot;authorization:Bearer         Mi4wQUJBS0xDVVdXd2dBUU1KMmw3eVZDeGNBQUFCaEFsVk5CN2tTV1FDNVFOV196cTVVUmVGWTFEVy1nbGk3Q2hVakx3|1493118236|3fa676b476d335125e9b4990da0f0137dc2d99ba&quot;,
+                &quot;Connection:keep-alive&quot;,
+                &quot;User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36&quot;,
+                &quot;x-udid:AEDCdpe8lQuPTqqIYSLrMvJpCdXgRVxt_Pw=&quot;,
+            ],
+            CURLOPT_COOKIE =&gt; $cookie,
+            CURLOPT_FOLLOWLOCATION =&gt; 1,
+            CURLOPT_RETURNTRANSFER =&gt; 1,
+            CURLOPT_HEADER =&gt; 0,
+            CURLOPT_SSL_VERIFYPEER =&gt; false,
+            CURLOPT_SSL_VERIFYHOST =&gt; false,
+            CURLOPT_ENCODING =&gt; &quot;gzip&quot;
+        ));
+        $content = curl_exec($ch);
+        curl_close($ch);
+        return $content;
+    }
+}
+
+$question = 56999743;//问题ID
+$total = 1;//初始总回答数
+if (isset($question) &amp;&amp; !empty($question)) {
+    $zhihu = new Zhihu($question);
+    while ($zhihu-&gt;getHasDone() &lt; $total) {
+        $url = &quot;https://www.zhihu.com/api/v4/questions/&quot; . $question . &quot;/answers?include=data%5B*%5D.is_normal%2C&quot; .
+            &quot;is_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2C&quot; .
+            &quot;voteup_count%2Creshipment_settings%2Ccomment_permission%2Cmark_infos%2Ccreated_time%2Cupdated_time%2C&quot; .
+            &quot;relationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2C&quot; .
+            &quot;upvoted_followees%3Bdata%5B*%5D.author.badge%5B%3F(type%3Dbest_answerer)%5D.topics&amp;&quot; .
+            &quot;offset=&quot; . $zhihu-&gt;getHasDone() . &quot;&amp;limit=20&amp;sort_by=default&quot;;
+        $content = $zhihu-&gt;doIt($url);
+        $content = json_decode($content, true);
+        $total = $content['paging']['totals'];
+        if (isset($content['data'])) {
+            $zhihu-&gt;saveImg($content);
+        }
+        $zhihu-&gt;setHasDone($zhihu-&gt;getHasDone() + 20);
+        var_dump($zhihu-&gt;getHasDone() . &quot;/&quot; . $content['paging']['totals']);
+    }
+}
+</code></pre>
+
+          </div>
+          
+        </div>
+      </div>
+    </article>
+    coderwumail@gmail.com
+    <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  </body>
+</html>

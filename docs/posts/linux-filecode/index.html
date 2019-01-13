@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
-  <meta property="og:url" content="https://blog.coderwu.com/posts/linux-sougou/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-sougou/" /><script type="application/ld+json">
+  <meta property="og:url" content="https://blog.coderwu.com/posts/linux-filecode/" />
+  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-filecode/" /><script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,17 +17,12 @@
            "@id": "https://blog.coderwu.com/"
       },
       "articleSection" : "posts",
-      "name" : "Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用",
-      "headline" : "Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用",
-      "description" : "有些时候Ubuntu的搜狗输入法在一些软件中无法调出使用
-解决方法：
-测试可用
-1.杀死fcitx重新启动
-$ sudo killall fcitx
-$ fcitx
-2.启动搜狗输入法
-$ sogou-qimpanel
-执行命令时若遇到错误提醒，长时间停顿可ctrl+c退出执行下一条命令，最后也能解决问题。",
+      "name" : "Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法",
+      "headline" : "Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法",
+      "description" : "乱码类似这样的：╫╩┴╧╖┤╤▌▓т╒╛╦┘╢╚│
+因为zip文件对文件名的编码默认为当前环境的locale，所以在windows下压缩的zip文件，在linux下解压便会乱码。
+在解压时，加上一个参数-O
+unzip -O CP936 filename.zip",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -35,24 +30,19 @@ $ sogou-qimpanel
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2016",
-      "datePublished": "2016-09-08 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2016-09-08 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/linux-sougou/",
+      "datePublished": "2016-09-12 00:00:00 &#43;0000 UTC",
+      "dateModified" : "2016-09-12 00:00:00 &#43;0000 UTC",
+      "url" : "https://blog.coderwu.com/posts/linux-filecode/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
-<title>Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用 - coderWu</title>
-  <meta property="og:title" content="Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用 - coderWu" />
+<title>Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法 - coderWu</title>
+  <meta property="og:title" content="Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法 - coderWu" />
   <meta property="og:type" content="article" />
-  <meta name="description" content="有些时候Ubuntu的搜狗输入法在一些软件中无法调出使用
-解决方法：
-测试可用
-1.杀死fcitx重新启动
-$ sudo killall fcitx
-$ fcitx
-2.启动搜狗输入法
-$ sogou-qimpanel
-执行命令时若遇到错误提醒，长时间停顿可ctrl&#43;c退出执行下一条命令，最后也能解决问题。" />
+  <meta name="description" content="乱码类似这样的：╫╩┴╧╖┤╤▌▓т╒╛╦┘╢╚│
+因为zip文件对文件名的编码默认为当前环境的locale，所以在windows下压缩的zip文件，在linux下解压便会乱码。
+在解压时，加上一个参数-O
+unzip -O CP936 filename.zip" />
 
   <link
     rel="stylesheet"
@@ -87,11 +77,11 @@ $ sogou-qimpanel
             <div class="head-line"></div>
           </a>
           <header class="post-header">
-            <h1 class="post-title">Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用</h1>
+            <h1 class="post-title">Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法</h1>
             <div class="row">
               <div class="col-xs-6">
-                <time class="post-date" datetime="2016-09-08 00:00:00 UTC">
-                  08 Sep 2016
+                <time class="post-date" datetime="2016-09-12 00:00:00 UTC">
+                  12 Sep 2016
                 </time>
               </div>
               <div class="col-xs-6">
@@ -103,23 +93,13 @@ $ sogou-qimpanel
           </header>
     
           <div class="post-content markdown-body">
-            <p>有些时候Ubuntu的搜狗输入法在一些软件中无法调出使用</p>
+            <p>乱码类似这样的：╫╩┴╧╖┤╤▌▓т╒╛╦┘╢╚│</p>
 
-<p>解决方法：</p>
+<p>因为zip文件对文件名的编码默认为当前环境的locale，所以在windows下压缩的zip文件，在linux下解压便会乱码。</p>
 
-<p>测试可用</p>
+<p>在解压时，加上一个参数-O</p>
 
-<p>1.杀死fcitx重新启动</p>
-
-<p>$ sudo killall fcitx</p>
-
-<p>$ fcitx</p>
-
-<p>2.启动搜狗输入法</p>
-
-<p>$ sogou-qimpanel</p>
-
-<p>执行命令时若遇到错误提醒，长时间停顿可ctrl+c退出执行下一条命令，最后也能解决问题。</p>
+<p>unzip -O CP936 filename.zip</p>
 
           </div>
           

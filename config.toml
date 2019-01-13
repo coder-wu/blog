@@ -10,6 +10,7 @@ publishDir = "docs"
 [author]
   name = "coderWu"
   homepage = "https://blog.coderwu.com/"
+  mail = "coderwumail@gmail.com"
 
 [languages]
   [languages.cn]

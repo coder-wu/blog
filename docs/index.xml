@@ -6,22 +6,253 @@
     <description>Recent content on coderWu</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.coderwu.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>中文题目</title>
-      <link>https://blog.coderwu.com/posts/cn/</link>
-      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
+      <title>Spring | Spring GET方法传参省略@RequestParam注解</title>
+      <link>https://blog.coderwu.com/posts/spring-spring_get/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.coderwu.com/posts/cn/</guid>
-      <description>中文信息 中文</description>
+      <guid>https://blog.coderwu.com/posts/spring-spring_get/</guid>
+      <description>在形如 http://example.com/method?param=1的请求中
+Spring的接收请求方法可以写做：
+@GetMapping(&amp;quot;/method&amp;quot;) public void get(String param) { //param = 1 ... }  与下面的写法效果相同：
+@GetMapping(&amp;quot;/method&amp;quot;) public void get(@RequestParam(value = &amp;quot;param&amp;quot;, required = false) String value) { //value= 1 ... }  </description>
     </item>
     
     <item>
-      <title>Linux|Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用</title>
+      <title>PHP | Typecho根据分类设置访问密码</title>
+      <link>https://blog.coderwu.com/posts/php-typecho_category_pwd/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-typecho_category_pwd/</guid>
+      <description>插件代码和使用：typecho-pwd-plugin</description>
+    </item>
+    
+    <item>
+      <title>算法 | Maximal GCD CodeForces - 803C</title>
+      <link>https://blog.coderwu.com/posts/algorithm-max_gcd/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-max_gcd/</guid>
+      <description>题目： 思路：
+设最大的公约数为x (a1 + a2 + &amp;hellip; + ak) * x = n x为n的一个约束，如果求x最大，则(a1 + a2 + &amp;hellip; + ak)为最小 而a1 &amp;hellip; ak为递增数列，所以a1 &amp;hellip; ak的最小值为(1 + k) * k / 2
+遍历求能满足条件的最大公约数
+因为 i * j = n, i和j都是n的因数，所以遍历1 &amp;ndash; sqrt(n)即可，下面代码中cd为最大公因数
+for (long i = 1; i &amp;lt;= sqrt; i++) { if (sum % i == 0) { if (i &amp;gt;= oneToK) { cd = sum / i; break; } else if (sum / i &amp;gt;= oneToK){ cd = i; } } }  找出最大公因数之后依次输出a1 * cd , a2 * cd &amp;hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd &amp;hellip; a(k - 1) * cd)</description>
+    </item>
+    
+    <item>
+      <title>Linux | xampp集合环境安装新版本upgrade</title>
+      <link>https://blog.coderwu.com/posts/linux-xampp_upgrade/</link>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/linux-xampp_upgrade/</guid>
+      <description>xampp是集合环境安装包，安装apache，mysql，php服务器环境。
+最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。
+如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。
+ 首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。
+$ cd /opt/lampp $ zip -r etc.zip etc/* $ zip -r var.zip var/* $ mv *.zip ~/
+ 卸载原本的lampp
+$ ./uninstall $ cd .. $ rm -rf lampp
+ 安装新版本的lampp
+ 还原备份的文件
+$ cd /opt/lampp $ mv ~/*.zip ./ $ unzip etc.zip ./ $ unzip var.zip ./ $ cd var/mysql $ chown -R mysql *
+还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。
+ 重启服务
+$/opt/lampp/lampp restart
+  升级完成</description>
+    </item>
+    
+    <item>
+      <title>Python | 从openlaw爬文书的小爬虫</title>
+      <link>https://blog.coderwu.com/posts/python-openlaw/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/python-openlaw/</guid>
+      <description>最近因为实训，第一次使用Python写爬虫，爬取openlaw的文书
+具体的描述写在github的README里
+github地址：https://github.com/coder-wu/openlaw</description>
+    </item>
+    
+    <item>
+      <title>算法 | 不使用数学运算符求两整数和</title>
+      <link>https://blog.coderwu.com/posts/algorithm-a_b/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-a_b/</guid>
+      <description>题目来自 lintcode A+B问题
+描述
+给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
+样例 如果 a=1 并且 b=2，返回3
+代码：
+public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators. if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp;amp; b) &amp;lt;&amp;lt; 1; return aplusb(XOresult, carry); }  注意点：
+与或（^）运算符,和左移（&amp;lt;&amp;lt;）右移（&amp;gt;&amp;gt;）符号的理解和使用</description>
+    </item>
+    
+    <item>
+      <title>算法 | 丢失的第一个正整数</title>
+      <link>https://blog.coderwu.com/posts/algorithm-first_missing_positive/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-first_missing_positive/</guid>
+      <description>题目来自LintCode 给出一个无序的正数数组，找出其中没有出现的最小正整数。
+样例
+如果给出 [1,2,0], return 3 如果给出 [3,4,-1,1], return 2
+挑战 只允许时间复杂度O(n)的算法，并且只能使用常数级别的空间。
+解法： 1.如果A为整数1,2,3…N的随机排列，最小正整数就是N+1。 2.如果A中有N的数出现，最小正整数为1到N中的某个数。
+int firstMissingPositive(int[] A) { //l为左边界，初始值0，表示1到l已经出现过 //r为右边界，初始值A的长度，当数字大小超过r，则被丢弃 int l = 0; int r = A.length; while(l &amp;lt; r) { if(A[l] == l + 1) { l++; } else if(A[l]&amp;gt; r || A[l] &amp;lt;= l || A[A[l] - 1] == A[l]) { A[l] = A[--r]; } else { int temp = A[l]; A[l] = A[A[l] - 1]; A[temp - 1] = temp; } } return l + 1; }  时间复杂度O(n)，改变了原数组。</description>
+    </item>
+    
+    <item>
+      <title>PHP | 闲来无事写个知乎爬虫</title>
+      <link>https://blog.coderwu.com/posts/php-zhihu_crawling/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-zhihu_crawling/</guid>
+      <description>知乎刷多了，就想做点好玩的&amp;hellip;&amp;hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
+&amp;lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&amp;gt;question = $question; if (!file_exists(&amp;quot;image/&amp;quot; . $this-&amp;gt;question)) { mkdir (&amp;quot;image/&amp;quot; . $this-&amp;gt;question); } } public function getHasDone(): int{ return $this-&amp;gt;hasDone; } public function setHasDone(int $hasDone){ $this-&amp;gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&amp;gt; $value) { preg_match_all(&amp;quot;/&amp;lt;img.</description>
+    </item>
+    
+    <item>
+      <title>Java | 学习笔记</title>
+      <link>https://blog.coderwu.com/posts/java-learn_note/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/java-learn_note/</guid>
+      <description>空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。
+ Java堆内存是运行时数据区，存储类的实例（对象）。
+ break后跟一个标签可跳出外层循环：
+outer: for ( ; ; ) { for ( ; ; ) { ··· break outer; } }  Java方法的参数传递方式只有一种（值传递），将实际参数值的副本（复制品）传入方法内，而参数本身不会受到任何影响。当参数为引用类型时，因传递的是引用地址，堆中并未复制出一个相同的对象，所以操作的是同一个对象。
+ 方法重载：同一个类中方法名相同，参数列表不同（两同一不同），方法返回值，修饰符与方法重载无关。
+ 定义局部变量后，系统并未为这个变量分配空间，直到为这个变量赋值，才会为局部变量分配内存。
+ 尽可能缩小局部变量作用范围，局部变量的作用范围越小它在内存里停留的时间就越短，程序运行性能越好。
+ 访问控制符protected，即可以被同一个包中其他类访问，也可以被不同包中的子类访问。
+ 静态导入使用import static语句，导入指定类的某个静态Filed、方法或全部的静态Filed、方法。     单个：import static package.subpackage...ClassName.fieldName|methodName; 全部：import static package.subpackage...ClassName.*;    常量池（constant pool）专门用于管理在编译期被确定并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口中的常量，还包括字符串常量。
+ 对于外部类而言，其上一级为包，所以private和protected访问控制符对于外部类没有意义，外部类只能有两种访问控制级别：public和默认
+ 如果一个类要被声明为static的，只有一种情况，就是静态内部类。
+ 接口中不允许定义静态方法，接口中的方法总是用public abstract修饰，Field总是使用public static final修饰。接口里定义的内部类、接口、枚举类都采用public static修饰。
+ 外部类以外的地方创建内部类：
+    非静态内部类：Out.In in = new Out().</description>
+    </item>
+    
+    <item>
+      <title>JavaScript | 步请求保存返回结果，异步同步的区别</title>
+      <link>https://blog.coderwu.com/posts/javascript-ajax_async/</link>
+      <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/javascript-ajax_async/</guid>
+      <description>默认状态下ajax异步请求的async参数为true，也就是异步操作，此时获取到的返回数据只能在回调函数（success，complete）中使用，回调函数结束则返回数据被销毁。
+如下代码:
+var result = 0; $.ajax({ url : &amp;quot;url&amp;quot;, type : &amp;quot;POST&amp;quot;, data : {}, datatype : &amp;quot;json&amp;quot;, success : function (data) { result = data; }, });  虽然在success的回调函数中把data赋值给result，但ajax结束，result还是0，result只是在success函数中暂时等于data。
+解决方法：
+在ajax请求中吧async设置为false，即改为同步，如下：
+$.ajax({ url : &amp;quot;url&amp;quot;, type : &amp;quot;POST&amp;quot;, data : {}, datatype : &amp;quot;json&amp;quot;, async : false, success : function (data) { result = data; }, });  有关js异步和的同步一点解释：
+在异步操作时，ajax和其他js代码同时执行，而异步操作时，ajax之外的js代码进入一种假死状态，不再运行，等到ajax请求完成其他的js代码复活继续执行。</description>
+    </item>
+    
+    <item>
+      <title>Linux | CentOS升级python2.*到python3.*后yum无法使用</title>
+      <link>https://blog.coderwu.com/posts/linux-yum/</link>
+      <pubDate>Sat, 28 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/linux-yum/</guid>
+      <description>把服务器的python从2.*升级到3.*版本之后使用yum命令提示：
+File &amp;ldquo;/usr/bin/yum&amp;rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax
+解决方案：
+检测默认的python版本
+$ python -V
+如果是python 3.*
+$ whereis python
+检测是否有2.*版本的python,没有安装2.*版本的python
+之后：
+# vim /usr/bin/yum
+第一行是：
+#!/usr/bin/python
+修改为：
+#!/usr/bin/python2.*
+这里的版本号与whereis python 显示的python2.*版本号相同
+保存退出，可以正常使用yum命令</description>
+    </item>
+    
+    <item>
+      <title>PHP | 模拟微信发送消息的一个Demo</title>
+      <link>https://blog.coderwu.com/posts/php-wechat/</link>
+      <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-wechat/</guid>
+      <description>模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用
+示例代码：
+&amp;lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2016/12/24 * Time: 11:47 */ class WeChatPost{ private $event = &amp;quot;&amp;quot;; private $content = &amp;quot;&amp;quot;; private $time; /** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(&amp;quot;标签名&amp;quot; =&amp;gt; &amp;quot;内容&amp;quot;) * 发送的内容 * 例发送地理位置 * array(&amp;quot;Location_X&amp;quot; =&amp;gt; 1.29290, &amp;quot;Location_Y&amp;quot; =&amp;gt; 1.29290, &amp;quot;Scale&amp;quot; =&amp;gt; 20, &amp;quot;Label&amp;quot; =&amp;gt; &amp;quot;位置信息&amp;quot;) * 发送文字 * array(&amp;quot;Content&amp;quot; =&amp;gt; &amp;quot;text&amp;quot;) */ public function __construct($event, $url, $content){ $this-&amp;gt;event = $event; $this-&amp;gt;url = $url; $this-&amp;gt;content = $content; $this-&amp;gt;time = time(); } /** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 */ private function xml(){ $xml = &amp;quot;&amp;lt;xml&amp;gt; &amp;lt;ToUserName&amp;gt;100012&amp;lt;/ToUserName&amp;gt; &amp;lt;FromUserName&amp;gt;100012&amp;lt;/FromUserName&amp;gt; &amp;lt;CreateTime&amp;gt;{$this-&amp;gt;time}&amp;lt;/CreateTime&amp;gt; &amp;lt;MsgType&amp;gt;{$this-&amp;gt;event}&amp;lt;/MsgType&amp;gt; {$this-&amp;gt;content()} &amp;lt;MsgId&amp;gt;1234567890123456&amp;lt;/MsgId&amp;gt; &amp;lt;/xml&amp;gt;&amp;quot;; return $xml; } /** * 根据信息类型处理剩余的信息 * @return null|string */ private function content() { switch ($this-&amp;gt;event) { case &amp;quot;text&amp;quot; : return &amp;quot;&amp;lt;Content&amp;gt;{$this-&amp;gt;content[&amp;quot;Content&amp;quot;]}&amp;lt;/Content&amp;gt;&amp;quot;; case &amp;quot;image&amp;quot; : return &amp;quot;&amp;lt;PicUrl&amp;gt;{$this-&amp;gt;content[&amp;quot;PicUrl&amp;quot;]}&amp;lt;/PicUrl&amp;gt;&amp;quot;; case &amp;quot;link&amp;quot; : return &amp;quot;&amp;lt;Title&amp;gt;{$this-&amp;gt;content[&amp;quot;Title&amp;quot;]}&amp;lt;/Title&amp;gt; &amp;lt;Description&amp;gt;{$this-&amp;gt;content[&amp;quot;Description&amp;quot;]}&amp;lt;/Description&amp;gt; &amp;lt;Url&amp;gt;{$this-&amp;gt;content[&amp;quot;Url&amp;quot;]}&amp;lt;/Url&amp;gt;&amp;quot;; case &amp;quot;location&amp;quot; : return &amp;quot;&amp;lt;Location_X&amp;gt;{$this-&amp;gt;content[&amp;quot;Location_X&amp;quot;]}&amp;lt;/Location_X&amp;gt; &amp;lt;Location_Y&amp;gt;{$this-&amp;gt;content[&amp;quot;Location_Y&amp;quot;]}&amp;lt;/Location_Y&amp;gt; &amp;lt;Scale&amp;gt;{$this-&amp;gt;content[&amp;quot;Scale&amp;quot;]}&amp;lt;/Scale&amp;gt; &amp;lt;Label&amp;gt;{$this-&amp;gt;content[&amp;quot;Label&amp;quot;]}&amp;lt;/Label&amp;gt;&amp;quot;; case &amp;quot;event&amp;quot; : return &amp;quot;&amp;lt;Event&amp;gt;{$this-&amp;gt;content[&amp;quot;Event&amp;quot;]}&amp;lt;/Event&amp;gt;&amp;quot;; default : return null; } } /** * 模拟post过程 * @return mixed */ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =&amp;gt; $this-&amp;gt;url, CURLOPT_RETURNTRANSFER =&amp;gt; true, CURLOPT_HTTPHEADER =&amp;gt; [ &amp;quot;Content-type: text/xml&amp;quot; ], CURLOPT_POST =&amp;gt; true, CURLOPT_POSTFIELDS =&amp;gt; $this-&amp;gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } /** * 接收返回的信息，并处理为字符串 * @return string */ public function response(){ $response = &#39;&#39;; $postObj = simplexml_load_string($this-&amp;gt;post(), &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =&amp;gt; $value) { $response .</description>
+    </item>
+    
+    <item>
+      <title>Linux | CentOS在lampp集成环境下配置https访问</title>
+      <link>https://blog.coderwu.com/posts/linux-https/</link>
+      <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/linux-https/</guid>
+      <description>首先在阿里云官网的证书服务中购买一个免费的DV型SSL，审核通过下发之后选择apache版证书下载。 下载好的压缩包如图： 登陆服务器，进到lampp安装目录下的etc目录
+mkdir ssl
+之后将下载的压缩包里的文件拷到刚刚创建的ssl目录下。 进到lampp安装目录下的etc目录 vim http.conf
+找到
+#LoadModule ssl_module modules/mod_ssl.so
+#Include etc/extra/httpd-ssl.conf
+#Include etc/extra/httpd-vhosts.conf
+这三条如果前面有#将前面的#去掉。 之后进入lampp安装目录下的etc目录的extra目录
+vim httpd-ssl.conf
+进行如下操作
+ 添加 SSL 协议支持语句,关闭不安全的协议和加密套件 SSLProtocol all -SSLv2 -SSLv3 修改加密套件如下 SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL; 将服务器证书公钥配置到该路径下 SSLCertificateFile /opt/lampp/etc/ssl/public.pem (证书公钥) 将服务器证书私钥配置到该路径下 SSLCertificateKeyFile /opt/lampp/etc/ssl/订单号.key (证书私钥) 将服务器证书链配置到该路径下 SSLCertificateChainFile /opt/lampp/etc/ssl/chain.pem (证书链)删除行首的“#”号注释符  保存退出
+之后
+vim httpd-vhosts.conf
+进行虚拟机配置
+配置样例如下：
+&amp;lt;VirtualHost *:443&amp;gt; ServerAdmin admin DocumentRoot &amp;quot;网站根目录&amp;quot; ServerName www.example.com:443 SSLEngine on SSLCertificateFile &amp;quot;/opt/lampp/etc/ssl/public.pem&amp;quot; SSLCertificateKeyFile &amp;quot;/opt/lampp/etc/ssl/订单号.key&amp;quot; SSLCertificateChainFile &amp;quot;/opt/lampp/etc/ssl/chain.pem&amp;quot; ErrorLog &amp;quot;logs/www.example.com-error_log&amp;quot; CustomLog &amp;quot;logs/www.</description>
+    </item>
+    
+    <item>
+      <title>算法 | Java实现Dijkstra求最短路径贪心算法</title>
+      <link>https://blog.coderwu.com/posts/algorithm-dijkstra/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-dijkstra/</guid>
+      <description>贪心算法的基本思想是找出整体中的局部的最优解，将这些局部最优解整合起来形成总的一个最优解。使用贪心算法的问题需满足下面的两个性质：
+ 求整体的最优解可以通过求局部的最优解来解决（贪心选择性质）。 整体被划分为多个局部，这些局部具有最优解（最优子结构性质）。  Dijkstra求最短路径算法：
+ 假设带权有向图G的顶点集合为V，起始点为V0。 初始S={V0}，T=V-S={其余顶点}，其中集合S表示已经计算出最短距离的顶点，T是还没计算的剩余顶点。 初始化V0到其余各点的距离，D(V0,Vi)代表V0到Vi的最短距离，按如下规则。 若V0可以直接到达某个顶点Vi,则将边的权值赋给(V0,Vi)，否则D(V0,Vi)=∞。 从T中选取一个与S中顶点有关联（直接相连）且权值最小的顶点W（这里用到了贪心法思想），加入到S中。 以W作为中间点，若V0到T中某个顶点Vi距离变短，则修改D(V0,Vi)的值。 重复5）和6）直到T为空。  代码：
+/** * Dijkstra 算法 * Created by Jehu on 11/6/16. */ public class Dijkstra { private int [][]weight; private int start; public Dijkstra(int [][]weight, int start) { this.weight = weight; this.start = start; } /** * 开始贪心寻找最短路径 * @return int[] 表示从start到对应顶点的最短路径长度 */ public int[] start() { int n = weight.length;//顶点数 int []shortPath = new int[n];//存放最短路径 String []path = new String[n];//用字符表示路径 String thePath = &amp;quot;1&amp;quot;;//最短路径 int []visited = new int[n]; //标记是否已经找到最短路径 1表示找到，0表示未找到 //初始化起始顶点 shortPath[this.</description>
+    </item>
+    
+    <item>
+      <title>Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题</title>
+      <link>https://blog.coderwu.com/posts/linux-apache_ntfs/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/linux-apache_ntfs/</guid>
+      <description>用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。
+解决方案：
+在apache的配置文件http.conf中找到
+将用户和用户组daemon修改为你的用户和用户组
+保存退出重启apache
+问题解决</description>
+    </item>
+    
+    <item>
+      <title>Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法</title>
+      <link>https://blog.coderwu.com/posts/linux-filecode/</link>
+      <pubDate>Mon, 12 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/linux-filecode/</guid>
+      <description>乱码类似这样的：╫╩┴╧╖┤╤▌▓т╒╛╦┘╢╚│
+因为zip文件对文件名的编码默认为当前环境的locale，所以在windows下压缩的zip文件，在linux下解压便会乱码。
+在解压时，加上一个参数-O
+unzip -O CP936 filename.zip</description>
+    </item>
+    
+    <item>
+      <title>Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用</title>
       <link>https://blog.coderwu.com/posts/linux-sougou/</link>
       <pubDate>Thu, 08 Sep 2016 00:00:00 +0000</pubDate>
       
