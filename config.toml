@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "coderWu"
 theme = "yinyang"
 DefaultContentLanguage = "cn"
+keywords = [ "Blog", "coderWu"]
 publishDir = "docs"
 
 
@@ -21,7 +22,6 @@ publishDir = "docs"
     weight = 2
 
 [params]
-disqus = "A persion who writes code"
 extraHead = ''
 
 [[params.socials]]
