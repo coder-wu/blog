@@ -23,7 +23,7 @@ publishDir = "docs"
     weight = 2
 
 [params]
-extraHead = ''
+extraHead = '<script type="text/javascript" src="https://s22.cnzz.com/z_stat.php?id=1273172286&web_id=1273172286"></script>'
 
 [[params.socials]]
 name = "Github"
