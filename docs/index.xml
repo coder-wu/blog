@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>coderWu</title>
+    <link>https://blog.coderwu.com/</link>
+    <description>Recent content on coderWu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 04 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.coderwu.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>中文题目</title>
+      <link>https://blog.coderwu.com/posts/cn/</link>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/cn/</guid>
+      <description>中文信息 中文</description>
+    </item>
+    
+  </channel>
+</rss>
