@@ -103,7 +103,7 @@ draft: false
 > ③代码块，如果代码块只有一条语句可以省略花括号，如果只有一条return语句可以省略return关键字。
 
  - Lambda表达式的类型被称为“目标类型”，Lambda表达式的目标类型必须是“函数式接口（functional interface）”，函数式接口可以有多个默认方法，类方法，但只能有一个抽象方法。
- - ![](https://cdn.coderwu.com/image/lambda.png)
+ - ![](https://cdn.coderwu.com/images/blog/lambda.png)
 
  - HashMap根据equals()方法返回值判断两个value是否一致，通过equals()和hashCode()的返回值相等判断key是否相等。
 

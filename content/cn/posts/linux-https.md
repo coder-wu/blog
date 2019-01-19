@@ -7,7 +7,7 @@ draft: false
 
 首先在阿里云官网的证书服务中购买一个免费的DV型SSL，审核通过下发之后选择apache版证书下载。
 下载好的压缩包如图：
-![](https://cdn.coderwu.com/image/ssl_download.png)
+![](https://cdn.coderwu.com/images/blog/ssl_download.png)
 登陆服务器，进到lampp安装目录下的etc目录
 
 mkdir ssl

@@ -11,7 +11,7 @@ draft: false
 
 在apache的配置文件http.conf中找到
 
-![](https://cdn.coderwu.com/image/apache_daemon.jpg)
+![](https://cdn.coderwu.com/images/blog/apache_daemon.jpg)
 
 将用户和用户组daemon修改为你的用户和用户组
 

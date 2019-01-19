@@ -6,7 +6,7 @@ draft: false
 ---
 
 题目：
-![]( https://cdn.coderwu.com/image/cf803c.webp)
+![]( https://cdn.coderwu.com/images/blog/cf803c.webp)
 
 思路：
 
