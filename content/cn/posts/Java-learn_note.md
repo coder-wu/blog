@@ -103,7 +103,7 @@ draft: false
 > ③代码块，如果代码块只有一条语句可以省略花括号，如果只有一条return语句可以省略return关键字。
 
  - Lambda表达式的类型被称为“目标类型”，Lambda表达式的目标类型必须是“函数式接口（functional interface）”，函数式接口可以有多个默认方法，类方法，但只能有一个抽象方法。
- - ![](https://cdn.coderwu.com/images/blog/lambda.png)
+ - ![](https://cdn.coderwu.com/blog/images/lambda.png)
 
  - HashMap根据equals()方法返回值判断两个value是否一致，通过equals()和hashCode()的返回值相等判断key是否相等。
 
@@ -116,12 +116,12 @@ draft: false
  - HashMap为快速查询设计（HashMap底层采用数组存储key-value对），推荐使用。
 
   - 使用带泛型生命的接口、父类的时候不能再包含类型参数，如下会报错:
-  `public Child extends Father<T> { }`
-  应为类型参数传入实际类型，如下：
-  `public Child extends Father<String> { }`
-  或者不传入实际的类型参数：
-  `public Child extends Father { }`
-  不传入实际的类型参数时会将T当作Object
+    `public Child extends Father<T> { }`
+    应为类型参数传入实际类型，如下：
+    `public Child extends Father<String> { }`
+    或者不传入实际的类型参数：
+    `public Child extends Father { }`
+    不传入实际的类型参数时会将T当作Object
  - instanceof运算符之后不可以跟泛型类（如 ：... instanceof List<String>会报错），应直接跟类名（如：... instanceof List）。
  - Child是Father的一个子类型（类、接口），C是带有泛型生命的类或接口，C<Child>并不是C<Father>的子类型。泛型类的类型参数一旦被指明，该泛型类便是独立的类，与其他类无关。
  - List<?>（未知元素的List），问好（?）被称为通配符，访问List<?>类型的形参时，每个元素为Object类型。
