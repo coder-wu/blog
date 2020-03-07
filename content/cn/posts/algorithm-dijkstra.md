@@ -124,5 +124,5 @@ public class Dijkstra {
 ```
 
 结果：
-![](/static/Algorithm_Greedy.png)
+![](/img/Algorithm_Greedy.png)
 
