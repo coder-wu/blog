@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.66.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="coderWu" />
+  <meta property="og:url" content="https://blog.coderwu.com/javascript-ajax_async/" />
+  <link rel="canonical" href="https://blog.coderwu.com/javascript-ajax_async/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.coderwu.com\/"
+      },
+      "articleSection" : "",
+      "name" : "JavaScript | 异步请求保存返回结果，异步同步的区别",
+      "headline" : "JavaScript | 异步请求保存返回结果，异步同步的区别",
+      "description" : "默认状态下ajax异步请求的async参数为true，也就是异步操作，此时获取到的返回数据只能在回调函数（success，complete）中使用，回调函数结束则返回数据被销毁。\n如下代码:\nvar result = 0; $.ajax({ url : \x26#34;url\x26#34;, type : \x26#34;POST\x26#34;, data : {}, datatype : \x26#34;json\x26#34;, success : function (data) { result = data; }, }); 虽然在success的回调函数中把data赋值给result，但ajax结束，result还是0，result只是在success函数中暂时等于data。\n解决方法：\n在ajax请求中吧async设置为false，即改为同步，如下：\n$.ajax({ url : \x26#34;url\x26#34;, type : \x26#34;POST\x26#34;, data : {}, datatype : \x26#34;json\x26#34;, async : false, success : function (data) { result = data; }, }); 有关js异步和的同步一点解释：\n在异步操作时，ajax和其他js代码同时执行，而异步操作时，ajax之外的js代码进入一种假死状态，不再运行，等到ajax请求完成其他的js代码复活继续执行。",
+      "inLanguage" : "en-US",
+      "author" : "coderWu",
+      "creator" : "coderWu",
+      "publisher": "coderWu",
+      "accountablePerson" : "coderWu",
+      "copyrightHolder" : "coderWu",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-03-18 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-03-18 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/javascript-ajax_async\/",
+      "keywords" : [ "Blog", "coderWu" ]
+  }
+</script>
+<title>JavaScript | 异步请求保存返回结果，异步同步的区别 - coderWu</title>
+  <meta property="og:title" content="JavaScript | 异步请求保存返回结果，异步同步的区别 - coderWu" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="默认状态下ajax异步请求的async参数为true，也就是异步操作，此时获取到的返回数据只能在回调函数（success，complete）中使用，回调函数结束则返回数据被销毁。
+如下代码:
+var result = 0; $.ajax({ url : &#34;url&#34;, type : &#34;POST&#34;, data : {}, datatype : &#34;json&#34;, success : function (data) { result = data; }, }); 虽然在success的回调函数中把data赋值给result，但ajax结束，result还是0，result只是在success函数中暂时等于data。
+解决方法：
+在ajax请求中吧async设置为false，即改为同步，如下：
+$.ajax({ url : &#34;url&#34;, type : &#34;POST&#34;, data : {}, datatype : &#34;json&#34;, async : false, success : function (data) { result = data; }, }); 有关js异步和的同步一点解释：
+在异步操作时，ajax和其他js代码同时执行，而异步操作时，ajax之外的js代码进入一种假死状态，不再运行，等到ajax请求完成其他的js代码复活继续执行。" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+</head>
+
+
+  <body>
+    <article class="post Chinese" id="article">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <a href="/">
+            <div class="head-line"></div>
+          </a>
+          <header class="post-header">
+            <h1 class="post-title">JavaScript | 异步请求保存返回结果，异步同步的区别</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <time class="post-date" datetime="2017-03-18 00:00:00 UTC">
+                  18 Mar 2017
+                </time>
+              </div>
+              <div class="col-xs-6">
+                <div class="post-author">
+                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          <div class="post-content markdown-body">
+            <p>默认状态下ajax异步请求的async参数为true，也就是异步操作，此时获取到的返回数据只能在回调函数（success，complete）中使用，回调函数结束则返回数据被销毁。</p>
+<p>如下代码:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+        <span style="color:#a6e22e">url</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;url&#34;</span>,
+        <span style="color:#a6e22e">type</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+        <span style="color:#a6e22e">data</span> <span style="color:#f92672">:</span> {},
+        <span style="color:#a6e22e">datatype</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+        <span style="color:#a6e22e">success</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+            <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>;
+        },
+    });
+</code></pre></div><p>虽然在success的回调函数中把data赋值给result，但ajax结束，result还是0，result只是在success函数中暂时等于data。</p>
+<p>解决方法：</p>
+<p>在ajax请求中吧async设置为false，即改为同步，如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">    <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">ajax</span>({
+        <span style="color:#a6e22e">url</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;url&#34;</span>,
+        <span style="color:#a6e22e">type</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;POST&#34;</span>,
+        <span style="color:#a6e22e">data</span> <span style="color:#f92672">:</span> {},
+        <span style="color:#a6e22e">datatype</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;json&#34;</span>,
+        <span style="color:#a6e22e">async</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
+        <span style="color:#a6e22e">success</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">data</span>) {
+        <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>;
+        },
+    });
+</code></pre></div><p>有关js异步和的同步一点解释：</p>
+<p>在异步操作时，ajax和其他js代码同时执行，而异步操作时，ajax之外的js代码进入一种假死状态，不再运行，等到ajax请求完成其他的js代码复活继续执行。</p>
+
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  </body>
+</html>

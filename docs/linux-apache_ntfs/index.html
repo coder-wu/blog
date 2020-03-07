@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.66.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="coderWu" />
+  <meta property="og:url" content="https://blog.coderwu.com/linux-apache_ntfs/" />
+  <link rel="canonical" href="https://blog.coderwu.com/linux-apache_ntfs/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.coderwu.com\/"
+      },
+      "articleSection" : "",
+      "name" : "Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题",
+      "headline" : "Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题",
+      "description" : "用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。\n解决方案：\n在apache的配置文件http.conf中找到\n将用户和用户组daemon修改为你的用户和用户组\n保存退出重启apache\n问题解决",
+      "inLanguage" : "en-US",
+      "author" : "coderWu",
+      "creator" : "coderWu",
+      "publisher": "coderWu",
+      "accountablePerson" : "coderWu",
+      "copyrightHolder" : "coderWu",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-09-25 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2016-09-25 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/linux-apache_ntfs\/",
+      "keywords" : [ "Blog", "coderWu" ]
+  }
+</script>
+<title>Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题 - coderWu</title>
+  <meta property="og:title" content="Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题 - coderWu" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。
+解决方案：
+在apache的配置文件http.conf中找到
+将用户和用户组daemon修改为你的用户和用户组
+保存退出重启apache
+问题解决" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+</head>
+
+
+  <body>
+    <article class="post Chinese" id="article">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <a href="/">
+            <div class="head-line"></div>
+          </a>
+          <header class="post-header">
+            <h1 class="post-title">Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <time class="post-date" datetime="2016-09-25 00:00:00 UTC">
+                  25 Sep 2016
+                </time>
+              </div>
+              <div class="col-xs-6">
+                <div class="post-author">
+                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          <div class="post-content markdown-body">
+            <p>用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。</p>
+<p>解决方案：</p>
+<p>在apache的配置文件http.conf中找到</p>
+<p><img src="/images/apache_daemon.jpg" alt=""></p>
+<p>将用户和用户组daemon修改为你的用户和用户组</p>
+<p>保存退出重启apache</p>
+<p>问题解决</p>
+
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  </body>
+</html>

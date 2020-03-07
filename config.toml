@@ -14,11 +14,11 @@ publishDir = "docs"
 
 [languages]
   [languages.cn]
-    contentDir = "content/cn"
+    contentDir = "content/cn/posts"
     languageName = "Chinese"
     weight = 1
   [languages.en]
-    contentDir = "content/cn"
+    contentDir = "content/cn/posts"
     languageName = "English"
     weight = 2
 

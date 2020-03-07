@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.66.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="coderWu" />
+  <meta property="og:url" content="https://blog.coderwu.com/linux-https/" />
+  <link rel="canonical" href="https://blog.coderwu.com/linux-https/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.coderwu.com\/"
+      },
+      "articleSection" : "",
+      "name" : "Linux | CentOS在lampp集成环境下配置https访问",
+      "headline" : "Linux | CentOS在lampp集成环境下配置https访问",
+      "description" : "首先在阿里云官网的证书服务中购买一个免费的DV型SSL，审核通过下发之后选择apache版证书下载。 下载好的压缩包如图： 登陆服务器，进到lampp安装目录下的etc目录\nmkdir ssl\n之后将下载的压缩包里的文件拷到刚刚创建的ssl目录下。 进到lampp安装目录下的etc目录 vim http.conf\n找到\n#LoadModule ssl_module modules\/mod_ssl.so\n#Include etc\/extra\/httpd-ssl.conf\n#Include etc\/extra\/httpd-vhosts.conf\n这三条如果前面有#将前面的#去掉。 之后进入lampp安装目录下的etc目录的extra目录\nvim httpd-ssl.conf\n进行如下操作\n 添加 SSL 协议支持语句,关闭不安全的协议和加密套件 SSLProtocol all -SSLv2 -SSLv3 修改加密套件如下 SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:\x2bHIGH:!MEDIUM:!LOW:!aNULL:!eNULL; 将服务器证书公钥配置到该路径下 SSLCertificateFile \/opt\/lampp\/etc\/ssl\/public.pem (证书公钥) 将服务器证书私钥配置到该路径下 SSLCertificateKeyFile \/opt\/lampp\/etc\/ssl\/订单号.key (证书私钥) 将服务器证书链配置到该路径下 SSLCertificateChainFile \/opt\/lampp\/etc\/ssl\/chain.pem (证书链)删除行首的“#”号注释符  保存退出\n之后\nvim httpd-vhosts.conf\n进行虚拟机配置\n配置样例如下：\n\x26lt;VirtualHost *:443\x26gt; ServerAdmin admin DocumentRoot \x26#34;网站根目录\x26#34; ServerName www.example.com:443 SSLEngine on SSLCertificateFile \x26#34;\/opt\/lampp\/etc\/ssl\/public.pem\x26#34; SSLCertificateKeyFile \x26#34;\/opt\/lampp\/etc\/ssl\/订单号.key\x26#34; SSLCertificateChainFile \x26#34;\/opt\/lampp\/etc\/ssl\/chain.pem\x26#34; ErrorLog \x26#34;logs\/www.example.com-error_log\x26#34; CustomLog \x26#34;logs\/www.",
+      "inLanguage" : "en-US",
+      "author" : "coderWu",
+      "creator" : "coderWu",
+      "publisher": "coderWu",
+      "accountablePerson" : "coderWu",
+      "copyrightHolder" : "coderWu",
+      "copyrightYear" : "2016",
+      "datePublished": "2016-12-16 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2016-12-16 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/linux-https\/",
+      "keywords" : [ "Blog", "coderWu" ]
+  }
+</script>
+<title>Linux | CentOS在lampp集成环境下配置https访问 - coderWu</title>
+  <meta property="og:title" content="Linux | CentOS在lampp集成环境下配置https访问 - coderWu" />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="首先在阿里云官网的证书服务中购买一个免费的DV型SSL，审核通过下发之后选择apache版证书下载。 下载好的压缩包如图： 登陆服务器，进到lampp安装目录下的etc目录
+mkdir ssl
+之后将下载的压缩包里的文件拷到刚刚创建的ssl目录下。 进到lampp安装目录下的etc目录 vim http.conf
+找到
+#LoadModule ssl_module modules/mod_ssl.so
+#Include etc/extra/httpd-ssl.conf
+#Include etc/extra/httpd-vhosts.conf
+这三条如果前面有#将前面的#去掉。 之后进入lampp安装目录下的etc目录的extra目录
+vim httpd-ssl.conf
+进行如下操作
+ 添加 SSL 协议支持语句,关闭不安全的协议和加密套件 SSLProtocol all -SSLv2 -SSLv3 修改加密套件如下 SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:&#43;HIGH:!MEDIUM:!LOW:!aNULL:!eNULL; 将服务器证书公钥配置到该路径下 SSLCertificateFile /opt/lampp/etc/ssl/public.pem (证书公钥) 将服务器证书私钥配置到该路径下 SSLCertificateKeyFile /opt/lampp/etc/ssl/订单号.key (证书私钥) 将服务器证书链配置到该路径下 SSLCertificateChainFile /opt/lampp/etc/ssl/chain.pem (证书链)删除行首的“#”号注释符  保存退出
+之后
+vim httpd-vhosts.conf
+进行虚拟机配置
+配置样例如下：
+&lt;VirtualHost *:443&gt; ServerAdmin admin DocumentRoot &#34;网站根目录&#34; ServerName www.example.com:443 SSLEngine on SSLCertificateFile &#34;/opt/lampp/etc/ssl/public.pem&#34; SSLCertificateKeyFile &#34;/opt/lampp/etc/ssl/订单号.key&#34; SSLCertificateChainFile &#34;/opt/lampp/etc/ssl/chain.pem&#34; ErrorLog &#34;logs/www.example.com-error_log&#34; CustomLog &#34;logs/www." />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
+  />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
+  
+  <script>
+    
+
+    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
+</head>
+
+
+  <body>
+    <article class="post Chinese" id="article">
+      <div class="row">
+        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <a href="/">
+            <div class="head-line"></div>
+          </a>
+          <header class="post-header">
+            <h1 class="post-title">Linux | CentOS在lampp集成环境下配置https访问</h1>
+            <div class="row">
+              <div class="col-xs-6">
+                <time class="post-date" datetime="2016-12-16 00:00:00 UTC">
+                  16 Dec 2016
+                </time>
+              </div>
+              <div class="col-xs-6">
+                <div class="post-author">
+                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+                </div>
+              </div>
+            </div>
+          </header>
+    
+          <div class="post-content markdown-body">
+            <p>首先在阿里云官网的证书服务中购买一个免费的DV型SSL，审核通过下发之后选择apache版证书下载。
+下载好的压缩包如图：
+<img src="/images/ssl_download.png" alt="">
+登陆服务器，进到lampp安装目录下的etc目录</p>
+<p>mkdir ssl</p>
+<p>之后将下载的压缩包里的文件拷到刚刚创建的ssl目录下。
+进到lampp安装目录下的etc目录
+vim http.conf</p>
+<p>找到</p>
+<p>#LoadModule ssl_module modules/mod_ssl.so</p>
+<p>#Include etc/extra/httpd-ssl.conf</p>
+<p>#Include etc/extra/httpd-vhosts.conf</p>
+<p>这三条如果前面有#将前面的#去掉。
+之后进入lampp安装目录下的etc目录的extra目录</p>
+<p>vim httpd-ssl.conf</p>
+<p>进行如下操作</p>
+<ul>
+<li>添加 SSL 协议支持语句,关闭不安全的协议和加密套件 SSLProtocol all -SSLv2 -SSLv3</li>
+<li>修改加密套件如下 SSLCipherSuite
+AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL;</li>
+<li>将服务器证书公钥配置到该路径下 SSLCertificateFile /opt/lampp/etc/ssl/public.pem
+(证书公钥)</li>
+<li>将服务器证书私钥配置到该路径下 SSLCertificateKeyFile /opt/lampp/etc/ssl/订单号.key
+(证书私钥)</li>
+<li>将服务器证书链配置到该路径下 SSLCertificateChainFile /opt/lampp/etc/ssl/chain.pem
+(证书链)删除行首的“#”号注释符</li>
+</ul>
+<p>保存退出</p>
+<p>之后</p>
+<p>vim httpd-vhosts.conf</p>
+<p>进行虚拟机配置</p>
+<p>配置样例如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;VirtualHost</span> <span style="color:#960050;background-color:#1e0010">*:443</span><span style="color:#f92672">&gt;</span>                                                           
+    ServerAdmin admin                                                          
+    DocumentRoot &#34;网站根目录&#34;                                             
+    ServerName www.example.com:443                                         
+    SSLEngine on                                                              
+    SSLCertificateFile &#34;/opt/lampp/etc/ssl/public.pem&#34;             
+    SSLCertificateKeyFile &#34;/opt/lampp/etc/ssl/订单号.key&#34;     
+    SSLCertificateChainFile &#34;/opt/lampp/etc/ssl/chain.pem&#34;               
+    ErrorLog &#34;logs/www.example.com-error_log&#34;                              
+    CustomLog &#34;logs/www.example.com-access_log&#34; common                     
+<span style="color:#f92672">&lt;/VirtualHost&gt;</span>  
+</code></pre></div><p>保存后重启apache就可以访问https://www.example.com</p>
+<p>重启apache可能会提示apache重启失败，可以关闭服务器之后再次启动</p>
+
+          </div>
+          
+        </div>
+      </div>
+    </article>
+
+    <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  </body>
+</html>
