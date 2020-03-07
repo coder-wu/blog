@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,18 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "算法 | 不使用数学运算符求两整数和",
       "headline" : "算法 | 不使用数学运算符求两整数和",
-      "description" : "题目来自 lintcode A+B问题
-描述
-给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
-样例 如果 a=1 并且 b=2，返回3
-代码：
-public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators. if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp; b) &lt;&lt; 1; return aplusb(XOresult, carry); }  注意点：
-与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用",
+      "description" : "题目来自 lintcode A\x2bB问题\n描述\n给出两个整数a和b, 求他们的和, 但不能使用 \x2b 等数学运算符。\n样例 如果 a=1 并且 b=2，返回3\n代码：\npublic int aplusb(int a, int b) { \/\/ write your code here, try to do it without arithmetic operators.  if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a \x26amp; b) \x26lt;\x26lt; 1; return aplusb(XOresult, carry); } 注意点：\n与或（^）运算符,和左移（\x26laquo;）右移（\x26raquo;）符号的理解和使用",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -33,9 +27,9 @@ public int aplusb(int a, int b) { // write your code here, try to do it without 
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-07-10 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2017-07-10 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/algorithm-a_b/",
+      "datePublished": "2017-07-10 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-07-10 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/algorithm-a_b\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -47,8 +41,8 @@ public int aplusb(int a, int b) { // write your code here, try to do it without 
 给出两个整数a和b, 求他们的和, 但不能使用 &#43; 等数学运算符。
 样例 如果 a=1 并且 b=2，返回3
 代码：
-public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators. if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp; b) &lt;&lt; 1; return aplusb(XOresult, carry); }  注意点：
-与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用" />
+public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators.  if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp; b) &lt;&lt; 1; return aplusb(XOresult, carry); } 注意点：
+与或（^）运算符,和左移（&laquo;）右移（&raquo;）符号的理解和使用" />
 
   <link
     rel="stylesheet"
@@ -100,30 +94,22 @@ public int aplusb(int a, int b) { // write your code here, try to do it without 
     
           <div class="post-content markdown-body">
             <p>题目来自  <a href="http://www.lintcode.com/zh-cn/problem/a-b-problem/?rand=true">lintcode A+B问题</a></p>
-
 <p><strong>描述</strong></p>
-
 <p>给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。</p>
-
 <p><strong>样例</strong>
 如果 a=1 并且 b=2，返回3</p>
-
 <p>代码：</p>
-
-<pre><code class="language-java">    public int aplusb(int a, int b) {
-        // write your code here, try to do it without arithmetic operators.
-        if (b == 0) {
-            return a;
-        }
-        int XOresult = a ^ b;
-        int carry = (a &amp; b) &lt;&lt; 1;
-        return aplusb(XOresult, carry);
-    }
-</code></pre>
-
-<p>注意点：</p>
-
-<p>与或（^）运算符,和左移（&lt;&lt;）右移（&gt;&gt;）符号的理解和使用</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">aplusb</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// write your code here, try to do it without arithmetic operators.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>b <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> a<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">int</span> XOresult <span style="color:#f92672">=</span> a <span style="color:#f92672">^</span> b<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">int</span> carry <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>a <span style="color:#f92672">&amp;</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">&lt;&lt;</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> aplusb<span style="color:#f92672">(</span>XOresult<span style="color:#f92672">,</span> carry<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>注意点：</p>
+<p>与或（^）运算符,和左移（&laquo;）右移（&raquo;）符号的理解和使用</p>
 
           </div>
           

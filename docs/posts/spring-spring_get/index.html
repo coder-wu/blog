@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,15 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "Spring | Spring GET方法传参省略@RequestParam注解",
       "headline" : "Spring | Spring GET方法传参省略@RequestParam注解",
-      "description" : "在形如 http://example.com/method?param=1的请求中
-Spring的接收请求方法可以写做：
-@GetMapping(&quot;/method&quot;) public void get(String param) { //param = 1 ... }  与下面的写法效果相同：
-@GetMapping(&quot;/method&quot;) public void get(@RequestParam(value = &quot;param&quot;, required = false) String value) { //value= 1 ... }  ",
+      "description" : "在形如 http:\/\/example.com\/method?param=1的请求中\nSpring的接收请求方法可以写做：\n@GetMapping(\x26#34;\/method\x26#34;) public void get(String param) { \/\/param = 1  ... } 与下面的写法效果相同：\n@GetMapping(\x26#34;\/method\x26#34;) public void get(@RequestParam(value = \x26#34;param\x26#34;, required = false) String value) { \/\/value= 1  ... } ",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -30,9 +27,9 @@ Spring的接收请求方法可以写做：
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2018",
-      "datePublished": "2018-07-12 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2018-07-12 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/spring-spring_get/",
+      "datePublished": "2018-07-12 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2018-07-12 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/spring-spring_get\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -41,8 +38,8 @@ Spring的接收请求方法可以写做：
   <meta property="og:type" content="article" />
   <meta name="description" content="在形如 http://example.com/method?param=1的请求中
 Spring的接收请求方法可以写做：
-@GetMapping(&quot;/method&quot;) public void get(String param) { //param = 1 ... }  与下面的写法效果相同：
-@GetMapping(&quot;/method&quot;) public void get(@RequestParam(value = &quot;param&quot;, required = false) String value) { //value= 1 ... }  " />
+@GetMapping(&#34;/method&#34;) public void get(String param) { //param = 1  ... } 与下面的写法效果相同：
+@GetMapping(&#34;/method&#34;) public void get(@RequestParam(value = &#34;param&#34;, required = false) String value) { //value= 1  ... } " />
 
   <link
     rel="stylesheet"
@@ -93,26 +90,20 @@ Spring的接收请求方法可以写做：
           </header>
     
           <div class="post-content markdown-body">
-            <p>在形如 <a href="http://example.com/method?param=1的请求中">http://example.com/method?param=1的请求中</a></p>
-
+            <p>在形如 <a href="http://example.com/method?param=1">http://example.com/method?param=1</a>的请求中</p>
 <p>Spring的接收请求方法可以写做：</p>
-
-<pre><code class="language-java">@GetMapping(&quot;/method&quot;)
-public void get(String param) {
-    //param = 1
-    ...
-}
-</code></pre>
-
-<p>与下面的写法效果相同：</p>
-
-<pre><code class="language-java">@GetMapping(&quot;/method&quot;)
-public void get(@RequestParam(value = &quot;param&quot;, required = false) String value) {
-   //value= 1 
-   ...
-}
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/method&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>String param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//param = 1
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>与下面的写法效果相同：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/method&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestParam</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;param&#34;</span><span style="color:#f92672">,</span> required <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> String value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+   <span style="color:#75715e">//value= 1 
+</span><span style="color:#75715e"></span>   <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
           </div>
           
         </div>

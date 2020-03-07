@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,13 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "PHP | 闲来无事写个知乎爬虫",
       "headline" : "PHP | 闲来无事写个知乎爬虫",
-      "description" : "知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
-&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&quot;image/&quot; . $this-&gt;question)) { mkdir (&quot;image/&quot; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content['data'])) { foreach ($content['data'] as $key =&gt; $value) { preg_match_all(&quot;/&lt;img.",
+      "description" : "知乎刷多了，就想做点好玩的\x26hellip;\x26hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：\n\x26lt;?php \/** * Created by PhpStorm. * User: Jehu * Date: 2017\/4\/25 * Time: 18:06 *\/ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-\x26gt;question = $question; if (!file_exists(\x26#34;image\/\x26#34; . $this-\x26gt;question)) { mkdir (\x26#34;image\/\x26#34; . $this-\x26gt;question); } } public function getHasDone(): int{ return $this-\x26gt;hasDone; } public function setHasDone(int $hasDone){ $this-\x26gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[\x26#39;data\x26#39;])) { foreach ($content[\x26#39;data\x26#39;] as $key =\x26gt; $value) { preg_match_all(\x26#34;\/\x26lt;img.",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -28,9 +27,9 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-04-25 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2017-04-25 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/php-zhihu_crawling/",
+      "datePublished": "2017-04-25 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-04-25 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/php-zhihu_crawling\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -38,7 +37,7 @@
   <meta property="og:title" content="PHP | 闲来无事写个知乎爬虫 - coderWu" />
   <meta property="og:type" content="article" />
   <meta name="description" content="知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
-&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&quot;image/&quot; . $this-&gt;question)) { mkdir (&quot;image/&quot; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&gt; $value) { preg_match_all(&quot;/&lt;img." />
+&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&#34;image/&#34; . $this-&gt;question)) { mkdir (&#34;image/&#34; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&gt; $value) { preg_match_all(&#34;/&lt;img." />
 
   <link
     rel="stylesheet"
@@ -93,52 +92,51 @@
 可以爬知乎某个问题下的所有回答中所包含的图片。
 错误没有完全处理，容错性可能不太好。
 代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * Created by PhpStorm.
+</span><span style="color:#e6db74"> * User: Jehu
+</span><span style="color:#e6db74"> * Date: 2017/4/25
+</span><span style="color:#e6db74"> * Time: 18:06
+</span><span style="color:#e6db74"> */</span>
 
-/**
- * Created by PhpStorm.
- * User: Jehu
- * Date: 2017/4/25
- * Time: 18:06
- */
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Zhihu</span> {
 
-class Zhihu {
+    <span style="color:#66d9ef">private</span> $hasDone <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-    private $hasDone = 0;
+    <span style="color:#66d9ef">private</span> $question;
 
-    private $question;
-
-    function __construct(string $question) {
-        $this-&gt;question = $question;
-        if (!file_exists(&quot;image/&quot; . $this-&gt;question)) {
-            mkdir (&quot;image/&quot; . $this-&gt;question);
+    <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">string</span> $question) {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">question</span> <span style="color:#f92672">=</span> $question;
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">file_exists</span>(<span style="color:#e6db74">&#34;image/&#34;</span> <span style="color:#f92672">.</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">question</span>)) {
+            <span style="color:#a6e22e">mkdir</span> (<span style="color:#e6db74">&#34;image/&#34;</span> <span style="color:#f92672">.</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">question</span>);
         }
     }
 
-    public function getHasDone(): int{
-        return $this-&gt;hasDone;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getHasDone</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">int</span>{
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasDone</span>;
     }
 
-    public function setHasDone(int $hasDone){
-        $this-&gt;hasDone = $hasDone;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">setHasDone</span>(<span style="color:#a6e22e">int</span> $hasDone){
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasDone</span> <span style="color:#f92672">=</span> $hasDone;
     }
 
-    public function saveImg(array $content) {
-        if (isset($content['data'])) {
-            foreach ($content['data'] as $key =&gt; $value) {
-                preg_match_all(&quot;/&lt;img.*?&gt;/&quot;, $value['content'], $result);
-                if (count($result[0]) &gt; 0) {
-                    foreach ($result[0] as $k =&gt; $v) {
-                        preg_match(&quot;/src=\&quot;.*?\&quot;/&quot;, $v, $result);
-                        $result = str_replace('src=', &quot;&quot;, $result[0]);
-                        $imgUrl = str_replace('&quot;', &quot;&quot;, $result);
-                        if ($imgUrl != &quot;//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg&quot;) {
-                            preg_match('((?&lt;=(com/))[\w\W]*)', $imgUrl, $imgName);
-                            $imgName = $imgName[0];
-                            $filePath = &quot;image/&quot; . $this-&gt;question . &quot;/&quot; . $imgName;
-                            if (!file_exists($filePath)) {
-                                file_put_contents($filePath, file_get_contents($imgUrl));
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">saveImg</span>(<span style="color:#66d9ef">array</span> $content) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($content[<span style="color:#e6db74">&#39;data&#39;</span>])) {
+            <span style="color:#66d9ef">foreach</span> ($content[<span style="color:#e6db74">&#39;data&#39;</span>] <span style="color:#66d9ef">as</span> $key <span style="color:#f92672">=&gt;</span> $value) {
+                <span style="color:#a6e22e">preg_match_all</span>(<span style="color:#e6db74">&#34;/&lt;img.*?&gt;/&#34;</span>, $value[<span style="color:#e6db74">&#39;content&#39;</span>], $result);
+                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">count</span>($result[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+                    <span style="color:#66d9ef">foreach</span> ($result[<span style="color:#ae81ff">0</span>] <span style="color:#66d9ef">as</span> $k <span style="color:#f92672">=&gt;</span> $v) {
+                        <span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#34;/src=</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">.*?</span><span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">/&#34;</span>, $v, $result);
+                        $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#39;src=&#39;</span>, <span style="color:#e6db74">&#34;&#34;</span>, $result[<span style="color:#ae81ff">0</span>]);
+                        $imgUrl <span style="color:#f92672">=</span> <span style="color:#a6e22e">str_replace</span>(<span style="color:#e6db74">&#39;&#34;&#39;</span>, <span style="color:#e6db74">&#34;&#34;</span>, $result);
+                        <span style="color:#66d9ef">if</span> ($imgUrl <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;//zhstatic.zhihu.com/assets/zhihu/ztext/whitedot.jpg&#34;</span>) {
+                            <span style="color:#a6e22e">preg_match</span>(<span style="color:#e6db74">&#39;((?&lt;=(com/))[\w\W]*)&#39;</span>, $imgUrl, $imgName);
+                            $imgName <span style="color:#f92672">=</span> $imgName[<span style="color:#ae81ff">0</span>];
+                            $filePath <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;image/&#34;</span> <span style="color:#f92672">.</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">question</span> <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">.</span> $imgName;
+                            <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">file_exists</span>($filePath)) {
+                                <span style="color:#a6e22e">file_put_contents</span>($filePath, <span style="color:#a6e22e">file_get_contents</span>($imgUrl));
                             }
                         }
                     }
@@ -148,57 +146,56 @@ class Zhihu {
         }
     }
 
-    public function doIt(string $url) : string {
-        $cookie = &quot;&quot;;//设置成自己账号登陆知乎的Cookie
-        $ch = curl_init();
-        curl_setopt_array($ch, array(
-            CURLOPT_URL =&gt; $url,
-            CURLOPT_HTTPHEADER =&gt; [
-                &quot;accept:application/json, text/plain, */*&quot;,
-                &quot;Accept-Encoding:gzip, deflate, sdch, br&quot;,
-                &quot;Accept-Language:zh-CN,zh;q=0.8&quot;,
-                &quot;authorization:Bearer         Mi4wQUJBS0xDVVdXd2dBUU1KMmw3eVZDeGNBQUFCaEFsVk5CN2tTV1FDNVFOV196cTVVUmVGWTFEVy1nbGk3Q2hVakx3|1493118236|3fa676b476d335125e9b4990da0f0137dc2d99ba&quot;,
-                &quot;Connection:keep-alive&quot;,
-                &quot;User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36&quot;,
-                &quot;x-udid:AEDCdpe8lQuPTqqIYSLrMvJpCdXgRVxt_Pw=&quot;,
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doIt</span>(<span style="color:#a6e22e">string</span> $url) <span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> {
+        $cookie <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;<span style="color:#75715e">//设置成自己账号登陆知乎的Cookie
+</span><span style="color:#75715e"></span>        $ch <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_init</span>();
+        <span style="color:#a6e22e">curl_setopt_array</span>($ch, <span style="color:#66d9ef">array</span>(
+            <span style="color:#a6e22e">CURLOPT_URL</span> <span style="color:#f92672">=&gt;</span> $url,
+            <span style="color:#a6e22e">CURLOPT_HTTPHEADER</span> <span style="color:#f92672">=&gt;</span> [
+                <span style="color:#e6db74">&#34;accept:application/json, text/plain, */*&#34;</span>,
+                <span style="color:#e6db74">&#34;Accept-Encoding:gzip, deflate, sdch, br&#34;</span>,
+                <span style="color:#e6db74">&#34;Accept-Language:zh-CN,zh;q=0.8&#34;</span>,
+                <span style="color:#e6db74">&#34;authorization:Bearer         Mi4wQUJBS0xDVVdXd2dBUU1KMmw3eVZDeGNBQUFCaEFsVk5CN2tTV1FDNVFOV196cTVVUmVGWTFEVy1nbGk3Q2hVakx3|1493118236|3fa676b476d335125e9b4990da0f0137dc2d99ba&#34;</span>,
+                <span style="color:#e6db74">&#34;Connection:keep-alive&#34;</span>,
+                <span style="color:#e6db74">&#34;User-Agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36&#34;</span>,
+                <span style="color:#e6db74">&#34;x-udid:AEDCdpe8lQuPTqqIYSLrMvJpCdXgRVxt_Pw=&#34;</span>,
             ],
-            CURLOPT_COOKIE =&gt; $cookie,
-            CURLOPT_FOLLOWLOCATION =&gt; 1,
-            CURLOPT_RETURNTRANSFER =&gt; 1,
-            CURLOPT_HEADER =&gt; 0,
-            CURLOPT_SSL_VERIFYPEER =&gt; false,
-            CURLOPT_SSL_VERIFYHOST =&gt; false,
-            CURLOPT_ENCODING =&gt; &quot;gzip&quot;
+            <span style="color:#a6e22e">CURLOPT_COOKIE</span> <span style="color:#f92672">=&gt;</span> $cookie,
+            <span style="color:#a6e22e">CURLOPT_FOLLOWLOCATION</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
+            <span style="color:#a6e22e">CURLOPT_RETURNTRANSFER</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>,
+            <span style="color:#a6e22e">CURLOPT_HEADER</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>,
+            <span style="color:#a6e22e">CURLOPT_SSL_VERIFYPEER</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>,
+            <span style="color:#a6e22e">CURLOPT_SSL_VERIFYHOST</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">false</span>,
+            <span style="color:#a6e22e">CURLOPT_ENCODING</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#34;gzip&#34;</span>
         ));
-        $content = curl_exec($ch);
-        curl_close($ch);
-        return $content;
+        $content <span style="color:#f92672">=</span> <span style="color:#a6e22e">curl_exec</span>($ch);
+        <span style="color:#a6e22e">curl_close</span>($ch);
+        <span style="color:#66d9ef">return</span> $content;
     }
 }
 
-$question = 56999743;//问题ID
-$total = 1;//初始总回答数
-if (isset($question) &amp;&amp; !empty($question)) {
-    $zhihu = new Zhihu($question);
-    while ($zhihu-&gt;getHasDone() &lt; $total) {
-        $url = &quot;https://www.zhihu.com/api/v4/questions/&quot; . $question . &quot;/answers?include=data%5B*%5D.is_normal%2C&quot; .
-            &quot;is_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2C&quot; .
-            &quot;voteup_count%2Creshipment_settings%2Ccomment_permission%2Cmark_infos%2Ccreated_time%2Cupdated_time%2C&quot; .
-            &quot;relationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2C&quot; .
-            &quot;upvoted_followees%3Bdata%5B*%5D.author.badge%5B%3F(type%3Dbest_answerer)%5D.topics&amp;&quot; .
-            &quot;offset=&quot; . $zhihu-&gt;getHasDone() . &quot;&amp;limit=20&amp;sort_by=default&quot;;
-        $content = $zhihu-&gt;doIt($url);
-        $content = json_decode($content, true);
-        $total = $content['paging']['totals'];
-        if (isset($content['data'])) {
-            $zhihu-&gt;saveImg($content);
+$question <span style="color:#f92672">=</span> <span style="color:#ae81ff">56999743</span>;<span style="color:#75715e">//问题ID
+</span><span style="color:#75715e"></span>$total <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;<span style="color:#75715e">//初始总回答数
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($question) <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span><span style="color:#66d9ef">empty</span>($question)) {
+    $zhihu <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Zhihu</span>($question);
+    <span style="color:#66d9ef">while</span> ($zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHasDone</span>() <span style="color:#f92672">&lt;</span> $total) {
+        $url <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;https://www.zhihu.com/api/v4/questions/&#34;</span> <span style="color:#f92672">.</span> $question <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/answers?include=data%5B*%5D.is_normal%2C&#34;</span> <span style="color:#f92672">.</span>
+            <span style="color:#e6db74">&#34;is_sticky%2Ccollapsed_by%2Csuggest_edit%2Ccomment_count%2Ccan_comment%2Ccontent%2Ceditable_content%2C&#34;</span> <span style="color:#f92672">.</span>
+            <span style="color:#e6db74">&#34;voteup_count%2Creshipment_settings%2Ccomment_permission%2Cmark_infos%2Ccreated_time%2Cupdated_time%2C&#34;</span> <span style="color:#f92672">.</span>
+            <span style="color:#e6db74">&#34;relationship.is_authorized%2Cis_author%2Cvoting%2Cis_thanked%2Cis_nothelp%2C&#34;</span> <span style="color:#f92672">.</span>
+            <span style="color:#e6db74">&#34;upvoted_followees%3Bdata%5B*%5D.author.badge%5B%3F(type%3Dbest_answerer)%5D.topics&amp;&#34;</span> <span style="color:#f92672">.</span>
+            <span style="color:#e6db74">&#34;offset=&#34;</span> <span style="color:#f92672">.</span> $zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHasDone</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;&amp;limit=20&amp;sort_by=default&#34;</span>;
+        $content <span style="color:#f92672">=</span> $zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">doIt</span>($url);
+        $content <span style="color:#f92672">=</span> <span style="color:#a6e22e">json_decode</span>($content, <span style="color:#66d9ef">true</span>);
+        $total <span style="color:#f92672">=</span> $content[<span style="color:#e6db74">&#39;paging&#39;</span>][<span style="color:#e6db74">&#39;totals&#39;</span>];
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isset</span>($content[<span style="color:#e6db74">&#39;data&#39;</span>])) {
+            $zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">saveImg</span>($content);
         }
-        $zhihu-&gt;setHasDone($zhihu-&gt;getHasDone() + 20);
-        var_dump($zhihu-&gt;getHasDone() . &quot;/&quot; . $content['paging']['totals']);
+        $zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">setHasDone</span>($zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHasDone</span>() <span style="color:#f92672">+</span> <span style="color:#ae81ff">20</span>);
+        <span style="color:#a6e22e">var_dump</span>($zhihu<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getHasDone</span>() <span style="color:#f92672">.</span> <span style="color:#e6db74">&#34;/&#34;</span> <span style="color:#f92672">.</span> $content[<span style="color:#e6db74">&#39;paging&#39;</span>][<span style="color:#e6db74">&#39;totals&#39;</span>]);
     }
 }
-</code></pre>
-
+</code></pre></div>
           </div>
           
         </div>

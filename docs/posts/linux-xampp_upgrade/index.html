@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,25 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "Linux | xampp集合环境安装新版本upgrade",
       "headline" : "Linux | xampp集合环境安装新版本upgrade",
-      "description" : "xampp是集合环境安装包，安装apache，mysql，php服务器环境。
-最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。
-如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。
- 首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。
-$ cd /opt/lampp $ zip -r etc.zip etc/* $ zip -r var.zip var/* $ mv *.zip ~/
- 卸载原本的lampp
-$ ./uninstall $ cd .. $ rm -rf lampp
- 安装新版本的lampp
- 还原备份的文件
-$ cd /opt/lampp $ mv ~/*.zip ./ $ unzip etc.zip ./ $ unzip var.zip ./ $ cd var/mysql $ chown -R mysql *
-还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。
- 重启服务
-$/opt/lampp/lampp restart
-  升级完成",
+      "description" : "xampp是集合环境安装包，安装apache，mysql，php服务器环境。\n最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。\n如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。\n  首先备份原本的安装目录\/opt\/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。\n$ cd \/opt\/lampp $ zip -r etc.zip etc\/* $ zip -r var.zip var\/* $ mv *.zip ~\/\n  卸载原本的lampp\n$ .\/uninstall $ cd .. $ rm -rf lampp\n  安装新版本的lampp\n  还原备份的文件\n$ cd \/opt\/lampp $ mv ~\/*.zip .\/ $ unzip etc.zip .\/ $ unzip var.zip .\/ $ cd var\/mysql $ chown -R mysql *\n还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。\n  重启服务\n$\/opt\/lampp\/lampp restart",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -40,9 +27,9 @@ $/opt/lampp/lampp restart
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-09-13 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2017-09-13 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/linux-xampp_upgrade/",
+      "datePublished": "2017-09-13 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-09-13 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/linux-xampp_upgrade\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -52,17 +39,16 @@ $/opt/lampp/lampp restart
   <meta name="description" content="xampp是集合环境安装包，安装apache，mysql，php服务器环境。
 最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。
 如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。
- 首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。
+  首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。
 $ cd /opt/lampp $ zip -r etc.zip etc/* $ zip -r var.zip var/* $ mv *.zip ~/
- 卸载原本的lampp
+  卸载原本的lampp
 $ ./uninstall $ cd .. $ rm -rf lampp
- 安装新版本的lampp
- 还原备份的文件
+  安装新版本的lampp
+  还原备份的文件
 $ cd /opt/lampp $ mv ~/*.zip ./ $ unzip etc.zip ./ $ unzip var.zip ./ $ cd var/mysql $ chown -R mysql *
 还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。
- 重启服务
-$/opt/lampp/lampp restart
-  升级完成" />
+  重启服务
+$/opt/lampp/lampp restart" />
 
   <link
     rel="stylesheet"
@@ -114,43 +100,40 @@ $/opt/lampp/lampp restart
     
           <div class="post-content markdown-body">
             <p>xampp是集合环境安装包，安装apache，mysql，php服务器环境。</p>
-
 <p>最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。</p>
-
 <p>如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。</p>
-
 <ol>
-<li><p>首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。</p>
-
+<li>
+<p>首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。</p>
 <p>$ cd /opt/lampp
 $ zip -r etc.zip etc/*
 $ zip -r var.zip var/*
-$ mv *.zip ~/</p></li>
-
-<li><p>卸载原本的lampp</p>
-
+$ mv *.zip ~/</p>
+</li>
+<li>
+<p>卸载原本的lampp</p>
 <p>$ ./uninstall
 $ cd ..
-$ rm -rf lampp</p></li>
-
-<li><p>安装新版本的lampp</p></li>
-
-<li><p>还原备份的文件</p>
-
+$ rm -rf lampp</p>
+</li>
+<li>
+<p>安装新版本的lampp</p>
+</li>
+<li>
+<p>还原备份的文件</p>
 <p>$ cd /opt/lampp
 $ mv ~/*.zip ./
 $ unzip etc.zip ./
 $ unzip var.zip ./
 $ cd var/mysql
 $ chown -R mysql *</p>
-
-<p>还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。</p></li>
-
-<li><p>重启服务</p>
-
-<p>$/opt/lampp/lampp restart</p></li>
+<p>还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。</p>
+</li>
+<li>
+<p>重启服务</p>
+<p>$/opt/lampp/lampp restart</p>
+</li>
 </ol>
-
 <p>升级完成</p>
 
           </div>

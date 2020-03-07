@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,17 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题",
       "headline" : "Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题",
-      "description" : "用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。
-解决方案：
-在apache的配置文件http.conf中找到
-将用户和用户组daemon修改为你的用户和用户组
-保存退出重启apache
-问题解决",
+      "description" : "用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。\n解决方案：\n在apache的配置文件http.conf中找到\n将用户和用户组daemon修改为你的用户和用户组\n保存退出重启apache\n问题解决",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -32,9 +27,9 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2016",
-      "datePublished": "2016-09-25 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2016-09-25 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/linux-apache_ntfs/",
+      "datePublished": "2016-09-25 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2016-09-25 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/linux-apache_ntfs\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -98,17 +93,11 @@
     
           <div class="post-content markdown-body">
             <p>用了一段时间的Ubuntu，有些时候很不方便，需要在windows进行操作，所以为了能灵活使用两个系统达到代码共享的效果，把apache的网站根目录放到了windows的ntfs分区。但是修改完根目录之后启动apache提示403错误，没有权限，去看ntfs上文件夹的权限是777，一脸懵逼。</p>
-
 <p>解决方案：</p>
-
 <p>在apache的配置文件http.conf中找到</p>
-
-<p><img src="https://cdn.coderwu.com/blog/images/apache_daemon.jpg" alt="" /></p>
-
+<p><img src="https://cdn.coderwu.com/blog/images/apache_daemon.jpg" alt=""></p>
 <p>将用户和用户组daemon修改为你的用户和用户组</p>
-
 <p>保存退出重启apache</p>
-
 <p>问题解决</p>
 
           </div>

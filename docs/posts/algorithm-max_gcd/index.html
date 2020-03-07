@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,16 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "算法 | Maximal GCD CodeForces - 803C",
       "headline" : "算法 | Maximal GCD CodeForces - 803C",
-      "description" : "题目： 思路：
-设最大的公约数为x (a1 + a2 + &hellip; + ak) * x = n x为n的一个约束，如果求x最大，则(a1 + a2 + &hellip; + ak)为最小 而a1 &hellip; ak为递增数列，所以a1 &hellip; ak的最小值为(1 + k) * k / 2
-遍历求能满足条件的最大公约数
-因为 i * j = n, i和j都是n的因数，所以遍历1 &ndash; sqrt(n)即可，下面代码中cd为最大公因数
-for (long i = 1; i &lt;= sqrt; i++) { if (sum % i == 0) { if (i &gt;= oneToK) { cd = sum / i; break; } else if (sum / i &gt;= oneToK){ cd = i; } } }  找出最大公因数之后依次输出a1 * cd , a2 * cd &hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd &hellip; a(k - 1) * cd)",
+      "description" : "题目： 思路：\n设最大的公约数为x (a1 \x2b a2 \x2b \x26hellip; \x2b ak) * x = n x为n的一个约束，如果求x最大，则(a1 \x2b a2 \x2b \x26hellip; \x2b ak)为最小 而a1 \x26hellip; ak为递增数列，所以a1 \x26hellip; ak的最小值为(1 \x2b k) * k \/ 2\n遍历求能满足条件的最大公约数\n因为 i * j = n, i和j都是n的因数，所以遍历1 \x26ndash; sqrt(n)即可，下面代码中cd为最大公因数\nfor (long i = 1; i \x26lt;= sqrt; i\x2b\x2b) { if (sum % i == 0) { if (i \x26gt;= oneToK) { cd = sum \/ i; break; } else if (sum \/ i \x26gt;= oneToK){ cd = i; } } } 找出最大公因数之后依次输出a1 * cd , a2 * cd \x26hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd \x26hellip; a(k - 1) * cd)",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -31,9 +27,9 @@ for (long i = 1; i &lt;= sqrt; i++) { if (sum % i == 0) { if (i &gt;= oneToK) { 
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-09-15 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2017-09-15 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/algorithm-max_gcd/",
+      "datePublished": "2017-09-15 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-09-15 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/algorithm-max_gcd\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -44,7 +40,7 @@ for (long i = 1; i &lt;= sqrt; i++) { if (sum % i == 0) { if (i &gt;= oneToK) { 
 设最大的公约数为x (a1 &#43; a2 &#43; &hellip; &#43; ak) * x = n x为n的一个约束，如果求x最大，则(a1 &#43; a2 &#43; &hellip; &#43; ak)为最小 而a1 &hellip; ak为递增数列，所以a1 &hellip; ak的最小值为(1 &#43; k) * k / 2
 遍历求能满足条件的最大公约数
 因为 i * j = n, i和j都是n的因数，所以遍历1 &ndash; sqrt(n)即可，下面代码中cd为最大公因数
-for (long i = 1; i &lt;= sqrt; i&#43;&#43;) { if (sum % i == 0) { if (i &gt;= oneToK) { cd = sum / i; break; } else if (sum / i &gt;= oneToK){ cd = i; } } }  找出最大公因数之后依次输出a1 * cd , a2 * cd &hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd &hellip; a(k - 1) * cd)" />
+for (long i = 1; i &lt;= sqrt; i&#43;&#43;) { if (sum % i == 0) { if (i &gt;= oneToK) { cd = sum / i; break; } else if (sum / i &gt;= oneToK){ cd = i; } } } 找出最大公因数之后依次输出a1 * cd , a2 * cd &hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd &hellip; a(k - 1) * cd)" />
 
   <link
     rel="stylesheet"
@@ -96,102 +92,92 @@ for (long i = 1; i &lt;= sqrt; i&#43;&#43;) { if (sum % i == 0) { if (i &gt;= on
     
           <div class="post-content markdown-body">
             <p>题目：
-<img src="https://cdn.coderwu.com/blog/images/cf803c.webp" alt="" /></p>
-
+<img src="https://cdn.coderwu.com/blog/images/cf803c.webp" alt=""></p>
 <p>思路：</p>
-
 <p>设最大的公约数为x
 (a1 +  a2 + &hellip; +  ak) * x = n
 x为n的一个约束，如果求x最大，则(a1 +  a2 + &hellip; + ak)为最小
 而a1 &hellip; ak为递增数列，所以a1 &hellip; ak的最小值为(1 + k) * k / 2</p>
-
 <p>遍历求能满足条件的最大公约数</p>
-
 <p>因为 i * j = n, i和j都是n的因数，所以遍历1 &ndash; sqrt(n)即可，下面代码中cd为最大公因数</p>
-
-<pre><code class="language-java">for (long i = 1; i &lt;= sqrt; i++) {
-    if (sum % i == 0) {
-        if (i &gt;= oneToK) {
-            cd = sum / i;
-            break;
-        } else if (sum / i &gt;= oneToK){
-            cd = i;
-        }
-    }
-}
-</code></pre>
-
-<p>找出最大公因数之后依次输出a1 * cd , a2 * cd &hellip; a(k - 1) * cd
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> sqrt<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;=</span> oneToK<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            cd <span style="color:#f92672">=</span> sum <span style="color:#f92672">/</span> i<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">/</span> i <span style="color:#f92672">&gt;=</span> oneToK<span style="color:#f92672">){</span>
+            cd <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>找出最大公因数之后依次输出a1 * cd , a2 * cd &hellip; a(k - 1) * cd
 最后输出sum - (a1 * cd , a2 * cd &hellip; a(k - 1) * cd)</p>
-
 <p>ac代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.Scanner<span style="color:#f92672">;</span>
 
-<pre><code class="language-java">import java.util.Scanner;
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * Code Forces
+</span><span style="color:#75715e"> * 803C - Maximal GCD
+</span><span style="color:#75715e"> * @author coderWu
+</span><span style="color:#75715e"> * Created in 下午8:43 17-9-14
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MaximalGCD</span> <span style="color:#f92672">{</span>
 
-/**
- * Code Forces
- * 803C - Maximal GCD
- * @author coderWu
- * Created in 下午8:43 17-9-14
- */
-public class MaximalGCD {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> sum<span style="color:#f92672">;</span>
 
-    public static long sum;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> count<span style="color:#f92672">;</span>
 
-    public static long count;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> cd<span style="color:#f92672">;</span>
 
-    public static long cd;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> sqrt<span style="color:#f92672">;</span>
 
-    public static long sqrt;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> oneToK<span style="color:#f92672">;</span>
 
-    public static long oneToK;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 
-    public static void main(String[] args) {
+        Scanner input <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
+        sum <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>input<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">());</span>
+        count <span style="color:#f92672">=</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">parseLong</span><span style="color:#f92672">(</span>input<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">());</span>
+        sqrt <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span><span style="color:#f92672">)</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">sqrt</span><span style="color:#f92672">(</span>sum<span style="color:#f92672">);</span>
+        oneToK <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>1 <span style="color:#f92672">+</span> count<span style="color:#f92672">)</span> <span style="color:#f92672">*</span> count <span style="color:#f92672">/</span> 2<span style="color:#f92672">;</span>
+        cd <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
 
-        Scanner input = new Scanner(System.in);
-        sum = Long.parseLong(input.next());
-        count = Long.parseLong(input.next());
-        sqrt = (long) Math.sqrt(sum);
-        oneToK = (1 + count) * count / 2;
-        cd = -1;
+        <span style="color:#75715e">// 千万别用oneToK &gt; sum
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// oneToK能大到你呵呵呵
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>count <span style="color:#f92672">&gt;</span> 145000<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(-</span>1<span style="color:#f92672">);</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
 
-        // 千万别用oneToK &gt; sum
-        // oneToK能大到你呵呵呵
-        if (count &gt; 145000) {
-            System.out.println(-1);
-            System.out.println();
-            return;
-        }
+        <span style="color:#75715e">//求最大公因数
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;=</span> sqrt<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">%</span> i <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;=</span> oneToK<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                    cd <span style="color:#f92672">=</span> sum <span style="color:#f92672">/</span> i<span style="color:#f92672">;</span>
+                    <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>sum <span style="color:#f92672">/</span> i <span style="color:#f92672">&gt;=</span> oneToK<span style="color:#f92672">){</span>
+                    cd <span style="color:#f92672">=</span> i<span style="color:#f92672">;</span>
+                <span style="color:#f92672">}</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
 
-        //求最大公因数
-        for (long i = 1; i &lt;= sqrt; i++) {
-            if (sum % i == 0) {
-                if (i &gt;= oneToK) {
-                    cd = sum / i;
-                    break;
-                } else if (sum / i &gt;= oneToK){
-                    cd = i;
-                }
-            }
-        }
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>cd <span style="color:#f92672">==</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(-</span>1<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">long</span> addSum <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> count<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span>cd <span style="color:#f92672">*</span> i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
+                addSum <span style="color:#f92672">+=</span> cd <span style="color:#f92672">*</span> i<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>sum <span style="color:#f92672">-</span> addSum<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
 
-        if (cd == -1) {
-            System.out.println(-1);
-        } else {
-            long addSum = 0;
-            for (long i = 1; i &lt; count; i++) {
-                System.out.print(cd * i + &quot; &quot;);
-                addSum += cd * i;
-            }
-            System.out.println(sum - addSum);
-        }
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
 
-        System.out.println();
-    }
-
-}
-</code></pre>
-
+<span style="color:#f92672">}</span>
+</code></pre></div>
           </div>
           
         </div>

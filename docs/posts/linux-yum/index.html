@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.53" />
+  <meta name="generator" content="Hugo 0.66.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,27 +14,12 @@
       "@type" : "BlogPosting",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https://blog.coderwu.com/"
+           "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
       "name" : "Linux | CentOS升级python2.*到python3.*后yum无法使用",
       "headline" : "Linux | CentOS升级python2.*到python3.*后yum无法使用",
-      "description" : "把服务器的python从2.*升级到3.*版本之后使用yum命令提示：
-File &ldquo;/usr/bin/yum&rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax
-解决方案：
-检测默认的python版本
-$ python -V
-如果是python 3.*
-$ whereis python
-检测是否有2.*版本的python,没有安装2.*版本的python
-之后：
-# vim /usr/bin/yum
-第一行是：
-#!/usr/bin/python
-修改为：
-#!/usr/bin/python2.*
-这里的版本号与whereis python 显示的python2.*版本号相同
-保存退出，可以正常使用yum命令",
+      "description" : "把服务器的python从2.*升级到3.*版本之后使用yum命令提示：\nFile \x26ldquo;\/usr\/bin\/yum\x26rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax\n解决方案：\n检测默认的python版本\n$ python -V\n如果是python 3.*\n$ whereis python\n检测是否有2.*版本的python,没有安装2.*版本的python\n之后：\n# vim \/usr\/bin\/yum\n第一行是：\n#!\/usr\/bin\/python\n修改为：\n#!\/usr\/bin\/python2.*\n这里的版本号与whereis python 显示的python2.*版本号相同\n保存退出，可以正常使用yum命令",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -42,9 +27,9 @@ $ whereis python
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-01-28 00:00:00 &#43;0000 UTC",
-      "dateModified" : "2017-01-28 00:00:00 &#43;0000 UTC",
-      "url" : "https://blog.coderwu.com/posts/linux-yum/",
+      "datePublished": "2017-01-28 00:00:00 \x2b0000 UTC",
+      "dateModified" : "2017-01-28 00:00:00 \x2b0000 UTC",
+      "url" : "https:\/\/blog.coderwu.com\/posts\/linux-yum\/",
       "keywords" : [ "Blog", "coderWu" ]
   }
 </script>
@@ -118,37 +103,22 @@ $ whereis python
     
           <div class="post-content markdown-body">
             <p>把服务器的python从2.*升级到3.*版本之后使用yum命令提示：</p>
-
 <p><strong>File &ldquo;/usr/bin/yum&rdquo;, line 30
-    except KeyboardInterrupt, e:
+except KeyboardInterrupt, e:
 SyntaxError: invalid syntax</strong></p>
-
 <p>解决方案：</p>
-
 <p>检测默认的python版本</p>
-
 <p>$ python -V</p>
-
 <p>如果是python 3.*</p>
-
 <p>$ whereis python</p>
-
 <p>检测是否有2.*版本的python,没有安装2.*版本的python</p>
-
 <p>之后：</p>
-
 <p># vim /usr/bin/yum</p>
-
 <p>第一行是：</p>
-
 <p>#!/usr/bin/python</p>
-
 <p>修改为：</p>
-
 <p>#!/usr/bin/python2.*</p>
-
 <p>这里的版本号与whereis python 显示的python2.*版本号相同</p>
-
 <p>保存退出，可以正常使用yum命令</p>
 
           </div>
