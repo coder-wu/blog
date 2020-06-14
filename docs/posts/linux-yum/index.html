@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/linux-yum/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-yum/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-yum/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,9 +19,9 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "Linux | CentOS升级python2.*到python3.*后yum无法使用",
-      "headline" : "Linux | CentOS升级python2.*到python3.*后yum无法使用",
-      "description" : "把服务器的python从2.*升级到3.*版本之后使用yum命令提示：\nFile \x26ldquo;\/usr\/bin\/yum\x26rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax\n解决方案：\n检测默认的python版本\n$ python -V\n如果是python 3.*\n$ whereis python\n检测是否有2.*版本的python,没有安装2.*版本的python\n之后：\n# vim \/usr\/bin\/yum\n第一行是：\n#!\/usr\/bin\/python\n修改为：\n#!\/usr\/bin\/python2.*\n这里的版本号与whereis python 显示的python2.*版本号相同\n保存退出，可以正常使用yum命令",
+      "name" : "CentOS升级python2.*到python3.*后yum无法使用",
+      "headline" : "CentOS升级python2.*到python3.*后yum无法使用",
+      "description" : "把服务器的python从2.*升级到3.*版本之后使用yum命令提示：\nFile \u0026ldquo;\/usr\/bin\/yum\u0026rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax\n解决方案：\n检测默认的python版本\n$ python -V\n如果是python 3.*\n$ whereis python\n检测是否有2.*版本的python,没有安装2.*版本的python\n之后：\n# vim \/usr\/bin\/yum\n第一行是：\n#!\/usr\/bin\/python\n修改为：\n#!\/usr\/bin\/python2.*\n这里的版本号与whereis python 显示的python2.*版本号相同\n保存退出，可以正常使用yum命令",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -27,15 +29,31 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-01-28 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2017-01-28 00:00:00 \x2b0000 UTC",
+      "datePublished": "2017-01-28 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2017-01-28 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/linux-yum\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>Linux | CentOS升级python2.*到python3.*后yum无法使用 - coderWu</title>
-  <meta property="og:title" content="Linux | CentOS升级python2.*到python3.*后yum无法使用 - coderWu" />
+<title>CentOS升级python2.*到python3.*后yum无法使用 - Blog</title>
+  <meta property="og:title" content="CentOS升级python2.*到python3.*后yum无法使用 - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="把服务器的python从2.*升级到3.*版本之后使用yum命令提示：
+File &ldquo;/usr/bin/yum&rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax
+解决方案：
+检测默认的python版本
+$ python -V
+如果是python 3.*
+$ whereis python
+检测是否有2.*版本的python,没有安装2.*版本的python
+之后：
+# vim /usr/bin/yum
+第一行是：
+#!/usr/bin/python
+修改为：
+#!/usr/bin/python2.*
+这里的版本号与whereis python 显示的python2.*版本号相同
+保存退出，可以正常使用yum命令" />
   <meta name="description" content="把服务器的python从2.*升级到3.*版本之后使用yum命令提示：
 File &ldquo;/usr/bin/yum&rdquo;, line 30 except KeyboardInterrupt, e: SyntaxError: invalid syntax
 解决方案：
@@ -52,57 +70,56 @@ $ whereis python
 #!/usr/bin/python2.*
 这里的版本号与whereis python 显示的python2.*版本号相同
 保存退出，可以正常使用yum命令" />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">Linux | CentOS升级python2.*到python3.*后yum无法使用</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2017-01-28 00:00:00 UTC">
-                  28 Jan 2017
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">CentOS升级python2.*到python3.*后yum无法使用</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-01-28 00:00:00 UTC">
+                28 Jan 2017
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <p>把服务器的python从2.*升级到3.*版本之后使用yum命令提示：</p>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>把服务器的python从2.*升级到3.*版本之后使用yum命令提示：</p>
 <p><strong>File &ldquo;/usr/bin/yum&rdquo;, line 30
 except KeyboardInterrupt, e:
 SyntaxError: invalid syntax</strong></p>
@@ -121,24 +138,66 @@ SyntaxError: invalid syntax</strong></p>
 <p>这里的版本号与whereis python 显示的python2.*版本号相同</p>
 <p>保存退出，可以正常使用yum命令</p>
 
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/linux/">
+                Linux
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

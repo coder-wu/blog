@@ -1,29 +1,32 @@
 baseURL = "https://blog.coderwu.com/"
 languageCode = "en-us"
-title = "coderWu"
-theme = "yinyang"
+title = "Blog"
+theme = "default"
 DefaultContentLanguage = "cn"
-keywords = [ "Blog", "coderWu"]
 publishDir = "docs"
-
 
 [author]
   name = "coderWu"
   homepage = "https://blog.coderwu.com/"
-  mail = "coderwumail@gmail.com"
+  mail = "coderwumail(at)gmail.com"
 
 [languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
   [languages.cn]
-    contentDir = "content/cn/posts"
+    contentDir = "content/cn"
     languageName = "Chinese"
     weight = 1
-  [languages.en]
-    contentDir = "content/cn/posts"
-    languageName = "English"
-    weight = 2
 
 [params]
 extraHead = '<script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>'
+mainSections = ["posts"]
+
+[[params.socials]]
+name = "Blog"
+link = "https://blog.coderwu.com/"
 
 [[params.socials]]
 name = "Github"

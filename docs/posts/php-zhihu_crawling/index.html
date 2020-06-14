@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/php-zhihu_crawling/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/php-zhihu_crawling/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/php-zhihu_crawling/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,9 +19,9 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "PHP | 闲来无事写个知乎爬虫",
-      "headline" : "PHP | 闲来无事写个知乎爬虫",
-      "description" : "知乎刷多了，就想做点好玩的\x26hellip;\x26hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：\n\x26lt;?php \/** * Created by PhpStorm. * User: Jehu * Date: 2017\/4\/25 * Time: 18:06 *\/ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-\x26gt;question = $question; if (!file_exists(\x26#34;image\/\x26#34; . $this-\x26gt;question)) { mkdir (\x26#34;image\/\x26#34; . $this-\x26gt;question); } } public function getHasDone(): int{ return $this-\x26gt;hasDone; } public function setHasDone(int $hasDone){ $this-\x26gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[\x26#39;data\x26#39;])) { foreach ($content[\x26#39;data\x26#39;] as $key =\x26gt; $value) { preg_match_all(\x26#34;\/\x26lt;img.",
+      "name" : "闲来无事写个知乎爬虫",
+      "headline" : "闲来无事写个知乎爬虫",
+      "description" : "知乎刷多了，就想做点好玩的\u0026hellip;\u0026hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：\n\u0026lt;?php \/** * Created by PhpStorm. * User: Jehu * Date: 2017\/4\/25 * Time: 18:06 *\/ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-\u0026gt;question = $question; if (!file_exists(\u0026#34;image\/\u0026#34; . $this-\u0026gt;question)) { mkdir (\u0026#34;image\/\u0026#34; . $this-\u0026gt;question); } } public function getHasDone(): int{ return $this-\u0026gt;hasDone; } public function setHasDone(int $hasDone){ $this-\u0026gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[\u0026#39;data\u0026#39;])) { foreach ($content[\u0026#39;data\u0026#39;] as $key =\u0026gt; $value) { preg_match_all(\u0026#34;\/\u0026lt;img.",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -27,68 +29,69 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-04-25 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2017-04-25 00:00:00 \x2b0000 UTC",
+      "datePublished": "2017-04-25 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2017-04-25 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/php-zhihu_crawling\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>PHP | 闲来无事写个知乎爬虫 - coderWu</title>
-  <meta property="og:title" content="PHP | 闲来无事写个知乎爬虫 - coderWu" />
+<title>闲来无事写个知乎爬虫 - Blog</title>
+  <meta property="og:title" content="闲来无事写个知乎爬虫 - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
+&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&#34;image/&#34; . $this-&gt;question)) { mkdir (&#34;image/&#34; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&gt; $value) { preg_match_all(&#34;/&lt;img." />
   <meta name="description" content="知乎刷多了，就想做点好玩的&hellip;&hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
 &lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&gt;question = $question; if (!file_exists(&#34;image/&#34; . $this-&gt;question)) { mkdir (&#34;image/&#34; . $this-&gt;question); } } public function getHasDone(): int{ return $this-&gt;hasDone; } public function setHasDone(int $hasDone){ $this-&gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&#39;data&#39;])) { foreach ($content[&#39;data&#39;] as $key =&gt; $value) { preg_match_all(&#34;/&lt;img." />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">PHP | 闲来无事写个知乎爬虫</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2017-04-25 00:00:00 UTC">
-                  25 Apr 2017
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">闲来无事写个知乎爬虫</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-04-25 00:00:00 UTC">
+                25 Apr 2017
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <p>知乎刷多了，就想做点好玩的&hellip;&hellip;
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>知乎刷多了，就想做点好玩的&hellip;&hellip;
 可以爬知乎某个问题下的所有回答中所包含的图片。
 错误没有完全处理，容错性可能不太好。
 代码：</p>
@@ -196,24 +199,66 @@ $question <span style="color:#f92672">=</span> <span style="color:#ae81ff">56999
     }
 }
 </code></pre></div>
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/php/">
+                PHP
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

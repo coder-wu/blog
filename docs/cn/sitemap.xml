@@ -18,92 +18,8 @@
   </url>
   
   <url>
-    <loc>https://blog.coderwu.com/spring-spring_get/</loc>
-    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/php-typecho_category_pwd/</loc>
-    <lastmod>2018-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/algorithm-max_gcd/</loc>
-    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-xampp_upgrade/</loc>
-    <lastmod>2017-09-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/python-openlaw/</loc>
-    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/algorithm-a_b/</loc>
-    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/algorithm-first_missing_positive/</loc>
-    <lastmod>2017-05-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/php-zhihu_crawling/</loc>
-    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/java-learn_note/</loc>
-    <lastmod>2017-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/javascript-ajax_async/</loc>
-    <lastmod>2017-03-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-yum/</loc>
-    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/php-wechat/</loc>
-    <lastmod>2016-12-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-https/</loc>
-    <lastmod>2016-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/algorithm-dijkstra/</loc>
-    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-apache_ntfs/</loc>
-    <lastmod>2016-09-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-filecode/</loc>
-    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.coderwu.com/linux-sougou/</loc>
-    <lastmod>2016-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.coderwu.com/categories/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -114,6 +30,131 @@
                 hreflang="cn"
                 href="https://blog.coderwu.com/categories/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/spring/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/spring-spring_get/</loc>
+    <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/php/</loc>
+    <lastmod>2018-03-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/php-typecho_category_pwd/</loc>
+    <lastmod>2018-03-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/algorithm-max_gcd/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2017-09-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/linux/</loc>
+    <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-xampp_upgrade/</loc>
+    <lastmod>2017-09-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/python/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/algorithm-a_b/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/python-openlaw/</loc>
+    <lastmod>2017-07-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/algorithm-first_missing_positive/</loc>
+    <lastmod>2017-05-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/php-zhihu_crawling/</loc>
+    <lastmod>2017-04-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/java/</loc>
+    <lastmod>2017-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/java-learn_note/</loc>
+    <lastmod>2017-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/categories/javascript/</loc>
+    <lastmod>2017-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/javascript-ajax_async/</loc>
+    <lastmod>2017-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-yum/</loc>
+    <lastmod>2017-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/php-wechat/</loc>
+    <lastmod>2016-12-24T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-https/</loc>
+    <lastmod>2016-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/algorithm-dijkstra/</loc>
+    <lastmod>2016-12-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-apache_ntfs/</loc>
+    <lastmod>2016-09-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-filecode/</loc>
+    <lastmod>2016-09-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/posts/linux-sougou/</loc>
+    <lastmod>2016-09-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>

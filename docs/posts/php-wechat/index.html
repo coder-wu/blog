@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/php-wechat/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/php-wechat/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/php-wechat/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,9 +19,9 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "PHP | 模拟微信发送消息的一个Demo",
-      "headline" : "PHP | 模拟微信发送消息的一个Demo",
-      "description" : "模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用\n示例代码：\n\x26lt;?php \/** * Created by PhpStorm. * User: Jehu * Date: 2016\/12\/24 * Time: 11:47 *\/ class WeChatPost{ private $event = \x26#34;\x26#34;; private $content = \x26#34;\x26#34;; private $time; \/** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(\x26#34;标签名\x26#34; =\x26gt; \x26#34;内容\x26#34;) * 发送的内容 * 例发送地理位置 * array(\x26#34;Location_X\x26#34; =\x26gt; 1.29290, \x26#34;Location_Y\x26#34; =\x26gt; 1.29290, \x26#34;Scale\x26#34; =\x26gt; 20, \x26#34;Label\x26#34; =\x26gt; \x26#34;位置信息\x26#34;) * 发送文字 * array(\x26#34;Content\x26#34; =\x26gt; \x26#34;text\x26#34;) *\/ public function __construct($event, $url, $content){ $this-\x26gt;event = $event; $this-\x26gt;url = $url; $this-\x26gt;content = $content; $this-\x26gt;time = time(); } \/** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 *\/ private function xml(){ $xml = \x26#34;\x26lt;xml\x26gt; \x26lt;ToUserName\x26gt;100012\x26lt;\/ToUserName\x26gt; \x26lt;FromUserName\x26gt;100012\x26lt;\/FromUserName\x26gt; \x26lt;CreateTime\x26gt;{$this-\x26gt;time}\x26lt;\/CreateTime\x26gt; \x26lt;MsgType\x26gt;{$this-\x26gt;event}\x26lt;\/MsgType\x26gt; {$this-\x26gt;content()}\x26lt;MsgId\x26gt;1234567890123456\x26lt;\/MsgId\x26gt; \x26lt;\/xml\x26gt;\x26#34;; return $xml; } \/** * 根据信息类型处理剩余的信息 * @return null|string *\/ private function content() { switch ($this-\x26gt;event) { case \x26#34;text\x26#34; : return \x26#34;\x26lt;Content\x26gt;{$this-\x26gt;content[\x26#34;Content\x26#34;]}\x26lt;\/Content\x26gt;\x26#34;; case \x26#34;image\x26#34; : return \x26#34;\x26lt;PicUrl\x26gt;{$this-\x26gt;content[\x26#34;PicUrl\x26#34;]}\x26lt;\/PicUrl\x26gt;\x26#34;; case \x26#34;link\x26#34; : return \x26#34;\x26lt;Title\x26gt;{$this-\x26gt;content[\x26#34;Title\x26#34;]}\x26lt;\/Title\x26gt; \x26lt;Description\x26gt;{$this-\x26gt;content[\x26#34;Description\x26#34;]}\x26lt;\/Description\x26gt; \x26lt;Url\x26gt;{$this-\x26gt;content[\x26#34;Url\x26#34;]}\x26lt;\/Url\x26gt;\x26#34;; case \x26#34;location\x26#34; : return \x26#34;\x26lt;Location_X\x26gt;{$this-\x26gt;content[\x26#34;Location_X\x26#34;]}\x26lt;\/Location_X\x26gt; \x26lt;Location_Y\x26gt;{$this-\x26gt;content[\x26#34;Location_Y\x26#34;]}\x26lt;\/Location_Y\x26gt; \x26lt;Scale\x26gt;{$this-\x26gt;content[\x26#34;Scale\x26#34;]}\x26lt;\/Scale\x26gt; \x26lt;Label\x26gt;{$this-\x26gt;content[\x26#34;Label\x26#34;]}\x26lt;\/Label\x26gt;\x26#34;; case \x26#34;event\x26#34; : return \x26#34;\x26lt;Event\x26gt;{$this-\x26gt;content[\x26#34;Event\x26#34;]}\x26lt;\/Event\x26gt;\x26#34;; default : return null; } } \/** * 模拟post过程 * @return mixed *\/ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =\x26gt; $this-\x26gt;url, CURLOPT_RETURNTRANSFER =\x26gt; true, CURLOPT_HTTPHEADER =\x26gt; [ \x26#34;Content-type: text\/xml\x26#34; ], CURLOPT_POST =\x26gt; true, CURLOPT_POSTFIELDS =\x26gt; $this-\x26gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } \/** * 接收返回的信息，并处理为字符串 * @return string *\/ public function response(){ $response = \x26#39;\x26#39;; $postObj = simplexml_load_string($this-\x26gt;post(), \x26#39;SimpleXMLElement\x26#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =\x26gt; $value) { $response .",
+      "name" : "模拟微信发送消息的一个Demo",
+      "headline" : "模拟微信发送消息的一个Demo",
+      "description" : "模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用\n示例代码：\n\u0026lt;?php \/** * Created by PhpStorm. * User: Jehu * Date: 2016\/12\/24 * Time: 11:47 *\/ class WeChatPost{ private $event = \u0026#34;\u0026#34;; private $content = \u0026#34;\u0026#34;; private $time; \/** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(\u0026#34;标签名\u0026#34; =\u0026gt; \u0026#34;内容\u0026#34;) * 发送的内容 * 例发送地理位置 * array(\u0026#34;Location_X\u0026#34; =\u0026gt; 1.29290, \u0026#34;Location_Y\u0026#34; =\u0026gt; 1.29290, \u0026#34;Scale\u0026#34; =\u0026gt; 20, \u0026#34;Label\u0026#34; =\u0026gt; \u0026#34;位置信息\u0026#34;) * 发送文字 * array(\u0026#34;Content\u0026#34; =\u0026gt; \u0026#34;text\u0026#34;) *\/ public function __construct($event, $url, $content){ $this-\u0026gt;event = $event; $this-\u0026gt;url = $url; $this-\u0026gt;content = $content; $this-\u0026gt;time = time(); } \/** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 *\/ private function xml(){ $xml = \u0026#34;\u0026lt;xml\u0026gt; \u0026lt;ToUserName\u0026gt;100012\u0026lt;\/ToUserName\u0026gt; \u0026lt;FromUserName\u0026gt;100012\u0026lt;\/FromUserName\u0026gt; \u0026lt;CreateTime\u0026gt;{$this-\u0026gt;time}\u0026lt;\/CreateTime\u0026gt; \u0026lt;MsgType\u0026gt;{$this-\u0026gt;event}\u0026lt;\/MsgType\u0026gt; {$this-\u0026gt;content()}\u0026lt;MsgId\u0026gt;1234567890123456\u0026lt;\/MsgId\u0026gt; \u0026lt;\/xml\u0026gt;\u0026#34;; return $xml; } \/** * 根据信息类型处理剩余的信息 * @return null|string *\/ private function content() { switch ($this-\u0026gt;event) { case \u0026#34;text\u0026#34; : return \u0026#34;\u0026lt;Content\u0026gt;{$this-\u0026gt;content[\u0026#34;Content\u0026#34;]}\u0026lt;\/Content\u0026gt;\u0026#34;; case \u0026#34;image\u0026#34; : return \u0026#34;\u0026lt;PicUrl\u0026gt;{$this-\u0026gt;content[\u0026#34;PicUrl\u0026#34;]}\u0026lt;\/PicUrl\u0026gt;\u0026#34;; case \u0026#34;link\u0026#34; : return \u0026#34;\u0026lt;Title\u0026gt;{$this-\u0026gt;content[\u0026#34;Title\u0026#34;]}\u0026lt;\/Title\u0026gt; \u0026lt;Description\u0026gt;{$this-\u0026gt;content[\u0026#34;Description\u0026#34;]}\u0026lt;\/Description\u0026gt; \u0026lt;Url\u0026gt;{$this-\u0026gt;content[\u0026#34;Url\u0026#34;]}\u0026lt;\/Url\u0026gt;\u0026#34;; case \u0026#34;location\u0026#34; : return \u0026#34;\u0026lt;Location_X\u0026gt;{$this-\u0026gt;content[\u0026#34;Location_X\u0026#34;]}\u0026lt;\/Location_X\u0026gt; \u0026lt;Location_Y\u0026gt;{$this-\u0026gt;content[\u0026#34;Location_Y\u0026#34;]}\u0026lt;\/Location_Y\u0026gt; \u0026lt;Scale\u0026gt;{$this-\u0026gt;content[\u0026#34;Scale\u0026#34;]}\u0026lt;\/Scale\u0026gt; \u0026lt;Label\u0026gt;{$this-\u0026gt;content[\u0026#34;Label\u0026#34;]}\u0026lt;\/Label\u0026gt;\u0026#34;; case \u0026#34;event\u0026#34; : return \u0026#34;\u0026lt;Event\u0026gt;{$this-\u0026gt;content[\u0026#34;Event\u0026#34;]}\u0026lt;\/Event\u0026gt;\u0026#34;; default : return null; } } \/** * 模拟post过程 * @return mixed *\/ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =\u0026gt; $this-\u0026gt;url, CURLOPT_RETURNTRANSFER =\u0026gt; true, CURLOPT_HTTPHEADER =\u0026gt; [ \u0026#34;Content-type: text\/xml\u0026#34; ], CURLOPT_POST =\u0026gt; true, CURLOPT_POSTFIELDS =\u0026gt; $this-\u0026gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } \/** * 接收返回的信息，并处理为字符串 * @return string *\/ public function response(){ $response = \u0026#39;\u0026#39;; $postObj = simplexml_load_string($this-\u0026gt;post(), \u0026#39;SimpleXMLElement\u0026#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =\u0026gt; $value) { $response .",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -27,69 +29,71 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2016",
-      "datePublished": "2016-12-24 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2016-12-24 00:00:00 \x2b0000 UTC",
+      "datePublished": "2016-12-24 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2016-12-24 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/php-wechat\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>PHP | 模拟微信发送消息的一个Demo - coderWu</title>
-  <meta property="og:title" content="PHP | 模拟微信发送消息的一个Demo - coderWu" />
+<title>模拟微信发送消息的一个Demo - Blog</title>
+  <meta property="og:title" content="模拟微信发送消息的一个Demo - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用
+示例代码：
+&lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2016/12/24 * Time: 11:47 */ class WeChatPost{ private $event = &#34;&#34;; private $content = &#34;&#34;; private $time; /** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(&#34;标签名&#34; =&gt; &#34;内容&#34;) * 发送的内容 * 例发送地理位置 * array(&#34;Location_X&#34; =&gt; 1.29290, &#34;Location_Y&#34; =&gt; 1.29290, &#34;Scale&#34; =&gt; 20, &#34;Label&#34; =&gt; &#34;位置信息&#34;) * 发送文字 * array(&#34;Content&#34; =&gt; &#34;text&#34;) */ public function __construct($event, $url, $content){ $this-&gt;event = $event; $this-&gt;url = $url; $this-&gt;content = $content; $this-&gt;time = time(); } /** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 */ private function xml(){ $xml = &#34;&lt;xml&gt; &lt;ToUserName&gt;100012&lt;/ToUserName&gt; &lt;FromUserName&gt;100012&lt;/FromUserName&gt; &lt;CreateTime&gt;{$this-&gt;time}&lt;/CreateTime&gt; &lt;MsgType&gt;{$this-&gt;event}&lt;/MsgType&gt; {$this-&gt;content()}&lt;MsgId&gt;1234567890123456&lt;/MsgId&gt; &lt;/xml&gt;&#34;; return $xml; } /** * 根据信息类型处理剩余的信息 * @return null|string */ private function content() { switch ($this-&gt;event) { case &#34;text&#34; : return &#34;&lt;Content&gt;{$this-&gt;content[&#34;Content&#34;]}&lt;/Content&gt;&#34;; case &#34;image&#34; : return &#34;&lt;PicUrl&gt;{$this-&gt;content[&#34;PicUrl&#34;]}&lt;/PicUrl&gt;&#34;; case &#34;link&#34; : return &#34;&lt;Title&gt;{$this-&gt;content[&#34;Title&#34;]}&lt;/Title&gt; &lt;Description&gt;{$this-&gt;content[&#34;Description&#34;]}&lt;/Description&gt; &lt;Url&gt;{$this-&gt;content[&#34;Url&#34;]}&lt;/Url&gt;&#34;; case &#34;location&#34; : return &#34;&lt;Location_X&gt;{$this-&gt;content[&#34;Location_X&#34;]}&lt;/Location_X&gt; &lt;Location_Y&gt;{$this-&gt;content[&#34;Location_Y&#34;]}&lt;/Location_Y&gt; &lt;Scale&gt;{$this-&gt;content[&#34;Scale&#34;]}&lt;/Scale&gt; &lt;Label&gt;{$this-&gt;content[&#34;Label&#34;]}&lt;/Label&gt;&#34;; case &#34;event&#34; : return &#34;&lt;Event&gt;{$this-&gt;content[&#34;Event&#34;]}&lt;/Event&gt;&#34;; default : return null; } } /** * 模拟post过程 * @return mixed */ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =&gt; $this-&gt;url, CURLOPT_RETURNTRANSFER =&gt; true, CURLOPT_HTTPHEADER =&gt; [ &#34;Content-type: text/xml&#34; ], CURLOPT_POST =&gt; true, CURLOPT_POSTFIELDS =&gt; $this-&gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } /** * 接收返回的信息，并处理为字符串 * @return string */ public function response(){ $response = &#39;&#39;; $postObj = simplexml_load_string($this-&gt;post(), &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =&gt; $value) { $response ." />
   <meta name="description" content="模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用
 示例代码：
 &lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2016/12/24 * Time: 11:47 */ class WeChatPost{ private $event = &#34;&#34;; private $content = &#34;&#34;; private $time; /** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(&#34;标签名&#34; =&gt; &#34;内容&#34;) * 发送的内容 * 例发送地理位置 * array(&#34;Location_X&#34; =&gt; 1.29290, &#34;Location_Y&#34; =&gt; 1.29290, &#34;Scale&#34; =&gt; 20, &#34;Label&#34; =&gt; &#34;位置信息&#34;) * 发送文字 * array(&#34;Content&#34; =&gt; &#34;text&#34;) */ public function __construct($event, $url, $content){ $this-&gt;event = $event; $this-&gt;url = $url; $this-&gt;content = $content; $this-&gt;time = time(); } /** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 */ private function xml(){ $xml = &#34;&lt;xml&gt; &lt;ToUserName&gt;100012&lt;/ToUserName&gt; &lt;FromUserName&gt;100012&lt;/FromUserName&gt; &lt;CreateTime&gt;{$this-&gt;time}&lt;/CreateTime&gt; &lt;MsgType&gt;{$this-&gt;event}&lt;/MsgType&gt; {$this-&gt;content()}&lt;MsgId&gt;1234567890123456&lt;/MsgId&gt; &lt;/xml&gt;&#34;; return $xml; } /** * 根据信息类型处理剩余的信息 * @return null|string */ private function content() { switch ($this-&gt;event) { case &#34;text&#34; : return &#34;&lt;Content&gt;{$this-&gt;content[&#34;Content&#34;]}&lt;/Content&gt;&#34;; case &#34;image&#34; : return &#34;&lt;PicUrl&gt;{$this-&gt;content[&#34;PicUrl&#34;]}&lt;/PicUrl&gt;&#34;; case &#34;link&#34; : return &#34;&lt;Title&gt;{$this-&gt;content[&#34;Title&#34;]}&lt;/Title&gt; &lt;Description&gt;{$this-&gt;content[&#34;Description&#34;]}&lt;/Description&gt; &lt;Url&gt;{$this-&gt;content[&#34;Url&#34;]}&lt;/Url&gt;&#34;; case &#34;location&#34; : return &#34;&lt;Location_X&gt;{$this-&gt;content[&#34;Location_X&#34;]}&lt;/Location_X&gt; &lt;Location_Y&gt;{$this-&gt;content[&#34;Location_Y&#34;]}&lt;/Location_Y&gt; &lt;Scale&gt;{$this-&gt;content[&#34;Scale&#34;]}&lt;/Scale&gt; &lt;Label&gt;{$this-&gt;content[&#34;Label&#34;]}&lt;/Label&gt;&#34;; case &#34;event&#34; : return &#34;&lt;Event&gt;{$this-&gt;content[&#34;Event&#34;]}&lt;/Event&gt;&#34;; default : return null; } } /** * 模拟post过程 * @return mixed */ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =&gt; $this-&gt;url, CURLOPT_RETURNTRANSFER =&gt; true, CURLOPT_HTTPHEADER =&gt; [ &#34;Content-type: text/xml&#34; ], CURLOPT_POST =&gt; true, CURLOPT_POSTFIELDS =&gt; $this-&gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } /** * 接收返回的信息，并处理为字符串 * @return string */ public function response(){ $response = &#39;&#39;; $postObj = simplexml_load_string($this-&gt;post(), &#39;SimpleXMLElement&#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =&gt; $value) { $response ." />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">PHP | 模拟微信发送消息的一个Demo</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2016-12-24 00:00:00 UTC">
-                  24 Dec 2016
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">模拟微信发送消息的一个Demo</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2016-12-24 00:00:00 UTC">
+                24 Dec 2016
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <p>模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用</p>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用</p>
 <p>示例代码：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#e6db74">/**
@@ -205,24 +209,66 @@ $postData <span style="color:#f92672">=</span> <span style="color:#66d9ef">array
 $weChat <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">WeChatPost</span>(<span style="color:#e6db74">&#34;text&#34;</span>, <span style="color:#e6db74">&#34;http://www.wechatexample.com&#34;</span>, $postData);
 <span style="color:#66d9ef">echo</span> $weChat<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">response</span>();
 </code></pre></div>
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/php/">
+                PHP
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

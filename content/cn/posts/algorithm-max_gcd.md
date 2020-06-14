@@ -1,7 +1,7 @@
 ---
-title: 算法 | Maximal GCD CodeForces - 803C 
+title: Maximal GCD CodeForces - 803C 
 date: 2017-09-15
-type: "post"
+categories: ['算法']
 draft: false
 ---
 

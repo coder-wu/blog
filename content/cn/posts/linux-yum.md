@@ -1,7 +1,7 @@
 ---
-title: Linux | CentOS升级python2.*到python3.*后yum无法使用
+title: CentOS升级python2.*到python3.*后yum无法使用
 date: 2017-01-28
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

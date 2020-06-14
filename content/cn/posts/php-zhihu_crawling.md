@@ -1,7 +1,7 @@
 ---
-title: PHP | 闲来无事写个知乎爬虫
+title: 闲来无事写个知乎爬虫
 date: 2017-04-25
-type: "post"
+categories: ['PHP']
 draft: false
 ---
 

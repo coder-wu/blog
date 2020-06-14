@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/spring-spring_get/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/spring-spring_get/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/spring-spring_get/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,9 +19,9 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "Spring | Spring GET方法传参省略@RequestParam注解",
-      "headline" : "Spring | Spring GET方法传参省略@RequestParam注解",
-      "description" : "在形如 http:\/\/example.com\/method?param=1的请求中\nSpring的接收请求方法可以写做：\n@GetMapping(\x26#34;\/method\x26#34;) public void get(String param) { \/\/param = 1  ... } 与下面的写法效果相同：\n@GetMapping(\x26#34;\/method\x26#34;) public void get(@RequestParam(value = \x26#34;param\x26#34;, required = false) String value) { \/\/value= 1  ... } ",
+      "name" : "Spring GET方法传参省略@RequestParam注解",
+      "headline" : "Spring GET方法传参省略@RequestParam注解",
+      "description" : "在形如 http:\/\/example.com\/method?param=1的请求中\nSpring的接收请求方法可以写做：\n@GetMapping(\u0026#34;\/method\u0026#34;) public void get(String param) { \/\/param = 1  ... } 与下面的写法效果相同：\n@GetMapping(\u0026#34;\/method\u0026#34;) public void get(@RequestParam(value = \u0026#34;param\u0026#34;, required = false) String value) { \/\/value= 1  ... } ",
       "inLanguage" : "en-US",
       "author" : "coderWu",
       "creator" : "coderWu",
@@ -27,70 +29,73 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2018",
-      "datePublished": "2018-07-12 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2018-07-12 00:00:00 \x2b0000 UTC",
+      "datePublished": "2018-07-12 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2018-07-12 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/spring-spring_get\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>Spring | Spring GET方法传参省略@RequestParam注解 - coderWu</title>
-  <meta property="og:title" content="Spring | Spring GET方法传参省略@RequestParam注解 - coderWu" />
+<title>Spring GET方法传参省略@RequestParam注解 - Blog</title>
+  <meta property="og:title" content="Spring GET方法传参省略@RequestParam注解 - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="在形如 http://example.com/method?param=1的请求中
+Spring的接收请求方法可以写做：
+@GetMapping(&#34;/method&#34;) public void get(String param) { //param = 1  ... } 与下面的写法效果相同：
+@GetMapping(&#34;/method&#34;) public void get(@RequestParam(value = &#34;param&#34;, required = false) String value) { //value= 1  ... } " />
   <meta name="description" content="在形如 http://example.com/method?param=1的请求中
 Spring的接收请求方法可以写做：
 @GetMapping(&#34;/method&#34;) public void get(String param) { //param = 1  ... } 与下面的写法效果相同：
 @GetMapping(&#34;/method&#34;) public void get(@RequestParam(value = &#34;param&#34;, required = false) String value) { //value= 1  ... } " />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">Spring | Spring GET方法传参省略@RequestParam注解</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2018-07-12 00:00:00 UTC">
-                  12 Jul 2018
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Spring GET方法传参省略@RequestParam注解</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2018-07-12 00:00:00 UTC">
+                12 Jul 2018
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <p>在形如 <a href="http://example.com/method?param=1">http://example.com/method?param=1</a>的请求中</p>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>在形如 <a href="http://example.com/method?param=1">http://example.com/method?param=1</a>的请求中</p>
 <p>Spring的接收请求方法可以写做：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@GetMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/method&#34;</span><span style="color:#f92672">)</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>String param<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
@@ -104,24 +109,66 @@ Spring的接收请求方法可以写做：
 </span><span style="color:#75715e"></span>   <span style="color:#f92672">...</span>
 <span style="color:#f92672">}</span>
 </code></pre></div>
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/spring/">
+                Spring
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

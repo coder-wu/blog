@@ -1,7 +1,7 @@
 ---
-title: Linux | xampp集合环境安装新版本upgrade
+title: xampp集合环境安装新版本upgrade
 date: 2017-09-13
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

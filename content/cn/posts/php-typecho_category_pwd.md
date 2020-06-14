@@ -1,7 +1,7 @@
 ---
-title: PHP | Typecho根据分类设置访问密码
+title: Typecho根据分类设置访问密码
 date: 2018-03-21
-type: "post"
+categories: ['PHP']
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: 算法 | 丢失的第一个正整数
+title: 丢失的第一个正整数
 date: 2017-05-30
-type: "post"
+categories: ['算法']
 draft: false
 ---
 

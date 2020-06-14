@@ -1,7 +1,7 @@
 ---
-title: Python | 从openlaw爬文书的小爬虫
+title: 从openlaw爬文书的小爬虫
 date: 2017-07-10
-type: "post"
+categories: ['Python']
 draft: false
 ---
 

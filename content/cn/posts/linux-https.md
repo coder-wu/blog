@@ -1,7 +1,7 @@
 ---
-title: Linux | CentOS在lampp集成环境下配置https访问
+title: CentOS在lampp集成环境下配置https访问
 date: 2016-12-16
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

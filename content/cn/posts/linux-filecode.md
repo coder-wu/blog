@@ -1,7 +1,7 @@
 ---
-title: Linux | Ubuntu16.04系统中下载的中文文件名乱码解决办法
+title: Ubuntu16.04系统中下载的中文文件名乱码解决办法
 date: 2016-09-12
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

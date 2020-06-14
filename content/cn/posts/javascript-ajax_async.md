@@ -1,7 +1,7 @@
 ---
-title: JavaScript | 异步请求保存返回结果，异步同步的区别
+title: 异步请求保存返回结果，异步同步的区别
 date: 2017-03-18
-type: "post"
+categories: ['JavaScript']
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Linux | Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题
+title: Ubuntu16.04下Apache的根目录从ext分区换到ntfs后权限问题
 date: 2016-09-25
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

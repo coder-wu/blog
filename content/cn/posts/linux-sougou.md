@@ -1,7 +1,7 @@
 ---
-title: Linux | Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用
+title: Ubuntu16.04解决fcitx搜狗中文输入法在一些软件中无法使用
 date: 2016-09-08
-type: "post"
+categories: ['Linux']
 draft: false
 ---
 

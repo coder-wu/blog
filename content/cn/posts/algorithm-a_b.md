@@ -1,7 +1,7 @@
 ---
-title: 算法 | 不使用数学运算符求两整数和
+title: 不使用数学运算符求两整数和
 date: 2017-07-10
-type: "post"
+categories: ['算法']
 draft: false
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: 算法 | Java实现Dijkstra求最短路径贪心算法
+title: Java实现Dijkstra求最短路径贪心算法
 date: 2016-12-01
-type: "post"
+categories: ['算法']
 draft: false
 ---
 

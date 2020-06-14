@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/java-learn_note/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/java-learn_note/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/java-learn_note/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,8 +19,8 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "Java | 学习笔记",
-      "headline" : "Java | 学习笔记",
+      "name" : "学习笔记",
+      "headline" : "学习笔记",
       "description" : "空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。\n  Java堆内存是运行时数据区，存储类的实例（对象）。\n  break后跟一个标签可跳出外层循环：\n outer: for ( ; ; ) { for ( ; ; ) { ··· break outer; } }    Java方法的参数传递方式只有一种（值传递），将实际参数值的副本（复制品）传入方法内，而参数本身不会受到任何影响。当参数为引用类型时，因传递的是引用地址，堆中并未复制出一个相同的对象，所以操作的是同一个对象。\n  方法重载：同一个类中方法名相同，参数列表不同（两同一不同），方法返回值，修饰符与方法重载无关。\n  定义局部变量后，系统并未为这个变量分配空间，直到为这个变量赋值，才会为局部变量分配内存。\n  尽可能缩小局部变量作用范围，局部变量的作用范围越小它在内存里停留的时间就越短，程序运行性能越好。\n  访问控制符protected，即可以被同一个包中其他类访问，也可以被不同包中的子类访问。\n  静态导入使用import static语句，导入指定类的某个静态Filed、方法或全部的静态Filed、方法。\n    单个：import static package.subpackage...ClassName.fieldName|methodName; 全部：import static package.subpackage...ClassName.*;     常量池（constant pool）专门用于管理在编译期被确定并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口中的常量，还包括字符串常量。\n  对于外部类而言，其上一级为包，所以private和protected访问控制符对于外部类没有意义，外部类只能有两种访问控制级别：public和默认\n  如果一个类要被声明为static的，只有一种情况，就是静态内部类。",
       "inLanguage" : "en-US",
       "author" : "coderWu",
@@ -27,15 +29,27 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-04-19 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2017-04-19 00:00:00 \x2b0000 UTC",
+      "datePublished": "2017-04-19 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2017-04-19 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/java-learn_note\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>Java | 学习笔记 - coderWu</title>
-  <meta property="og:title" content="Java | 学习笔记 - coderWu" />
+<title>学习笔记 - Blog</title>
+  <meta property="og:title" content="学习笔记 - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。
+  Java堆内存是运行时数据区，存储类的实例（对象）。
+  break后跟一个标签可跳出外层循环：
+ outer: for ( ; ; ) { for ( ; ; ) { ··· break outer; } }    Java方法的参数传递方式只有一种（值传递），将实际参数值的副本（复制品）传入方法内，而参数本身不会受到任何影响。当参数为引用类型时，因传递的是引用地址，堆中并未复制出一个相同的对象，所以操作的是同一个对象。
+  方法重载：同一个类中方法名相同，参数列表不同（两同一不同），方法返回值，修饰符与方法重载无关。
+  定义局部变量后，系统并未为这个变量分配空间，直到为这个变量赋值，才会为局部变量分配内存。
+  尽可能缩小局部变量作用范围，局部变量的作用范围越小它在内存里停留的时间就越短，程序运行性能越好。
+  访问控制符protected，即可以被同一个包中其他类访问，也可以被不同包中的子类访问。
+  静态导入使用import static语句，导入指定类的某个静态Filed、方法或全部的静态Filed、方法。
+    单个：import static package.subpackage...ClassName.fieldName|methodName; 全部：import static package.subpackage...ClassName.*;     常量池（constant pool）专门用于管理在编译期被确定并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口中的常量，还包括字符串常量。
+  对于外部类而言，其上一级为包，所以private和protected访问控制符对于外部类没有意义，外部类只能有两种访问控制级别：public和默认
+  如果一个类要被声明为static的，只有一种情况，就是静态内部类。" />
   <meta name="description" content="空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。
   Java堆内存是运行时数据区，存储类的实例（对象）。
   break后跟一个标签可跳出外层循环：
@@ -48,57 +62,56 @@
     单个：import static package.subpackage...ClassName.fieldName|methodName; 全部：import static package.subpackage...ClassName.*;     常量池（constant pool）专门用于管理在编译期被确定并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口中的常量，还包括字符串常量。
   对于外部类而言，其上一级为包，所以private和protected访问控制符对于外部类没有意义，外部类只能有两种访问控制级别：public和默认
   如果一个类要被声明为static的，只有一种情况，就是静态内部类。" />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">Java | 学习笔记</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2017-04-19 00:00:00 UTC">
-                  19 Apr 2017
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">学习笔记</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-04-19 00:00:00 UTC">
+                19 Apr 2017
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <ul>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <ul>
 <li>
 <p>空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。</p>
 </li>
@@ -271,7 +284,7 @@
 <p>Lambda表达式的类型被称为“目标类型”，Lambda表达式的目标类型必须是“函数式接口（functional interface）”，函数式接口可以有多个默认方法，类方法，但只能有一个抽象方法。</p>
 </li>
 <li>
-<p><img src="https://cdn.coderwu.com/blog/images/lambda.png" alt=""></p>
+<p><img src="/images/lambda.png" alt=""></p>
 </li>
 <li>
 <p>HashMap根据equals()方法返回值判断两个value是否一致，通过equals()和hashCode()的返回值相等判断key是否相等。</p>
@@ -344,24 +357,66 @@
 </li>
 </ul>
 
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/java/">
+                Java
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

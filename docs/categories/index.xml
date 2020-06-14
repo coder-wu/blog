@@ -1,14 +1,78 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on coderWu</title>
+    <title>Categories on Blog</title>
     <link>https://blog.coderwu.com/categories/</link>
-    <description>Recent content in Categories on coderWu</description>
+    <description>Recent content in Categories on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 12 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.coderwu.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring</title>
+      <link>https://blog.coderwu.com/categories/spring/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://blog.coderwu.com/categories/php/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>算法</title>
+      <link>https://blog.coderwu.com/categories/%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blog.coderwu.com/categories/linux/</link>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://blog.coderwu.com/categories/python/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://blog.coderwu.com/categories/java/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://blog.coderwu.com/categories/javascript/</link>
+      <pubDate>Sat, 18 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/categories/javascript/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

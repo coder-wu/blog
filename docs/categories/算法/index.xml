@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on Blog</title>
+    <link>https://blog.coderwu.com/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 15 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.coderwu.com/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maximal GCD CodeForces - 803C</title>
+      <link>https://blog.coderwu.com/posts/algorithm-max_gcd/</link>
+      <pubDate>Fri, 15 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-max_gcd/</guid>
+      <description>题目： 思路：
+设最大的公约数为x (a1 + a2 + &amp;hellip; + ak) * x = n x为n的一个约束，如果求x最大，则(a1 + a2 + &amp;hellip; + ak)为最小 而a1 &amp;hellip; ak为递增数列，所以a1 &amp;hellip; ak的最小值为(1 + k) * k / 2
+遍历求能满足条件的最大公约数
+因为 i * j = n, i和j都是n的因数，所以遍历1 &amp;ndash; sqrt(n)即可，下面代码中cd为最大公因数
+for (long i = 1; i &amp;lt;= sqrt; i++) { if (sum % i == 0) { if (i &amp;gt;= oneToK) { cd = sum / i; break; } else if (sum / i &amp;gt;= oneToK){ cd = i; } } } 找出最大公因数之后依次输出a1 * cd , a2 * cd &amp;hellip; a(k - 1) * cd 最后输出sum - (a1 * cd , a2 * cd &amp;hellip; a(k - 1) * cd)</description>
+    </item>
+    
+    <item>
+      <title>不使用数学运算符求两整数和</title>
+      <link>https://blog.coderwu.com/posts/algorithm-a_b/</link>
+      <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-a_b/</guid>
+      <description>题目来自 lintcode A+B问题
+描述
+给出两个整数a和b, 求他们的和, 但不能使用 + 等数学运算符。
+样例 如果 a=1 并且 b=2，返回3
+代码：
+public int aplusb(int a, int b) { // write your code here, try to do it without arithmetic operators.  if (b == 0) { return a; } int XOresult = a ^ b; int carry = (a &amp;amp; b) &amp;lt;&amp;lt; 1; return aplusb(XOresult, carry); } 注意点：
+与或（^）运算符,和左移（&amp;laquo;）右移（&amp;raquo;）符号的理解和使用</description>
+    </item>
+    
+    <item>
+      <title>丢失的第一个正整数</title>
+      <link>https://blog.coderwu.com/posts/algorithm-first_missing_positive/</link>
+      <pubDate>Tue, 30 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-first_missing_positive/</guid>
+      <description>题目来自LintCode 给出一个无序的正数数组，找出其中没有出现的最小正整数。
+样例
+如果给出 [1,2,0], return 3 如果给出 [3,4,-1,1], return 2
+挑战 只允许时间复杂度O(n)的算法，并且只能使用常数级别的空间。
+解法： 1.如果A为整数1,2,3…N的随机排列，最小正整数就是N+1。 2.如果A中有&amp;lt;1或者&amp;gt;N的数出现，最小正整数为1到N中的某个数。
+int firstMissingPositive(int[] A) { //l为左边界，初始值0，表示1到l已经出现过  //r为右边界，初始值A的长度，当数字大小超过r，则被丢弃  int l = 0; int r = A.length; while(l &amp;lt; r) { if(A[l] == l + 1) { l++; } else if(A[l]&amp;gt; r || A[l] &amp;lt;= l || A[A[l] - 1] == A[l]) { A[l] = A[--r]; } else { int temp = A[l]; A[l] = A[A[l] - 1]; A[temp - 1] = temp; } } return l + 1; } 时间复杂度O(n)，改变了原数组。</description>
+    </item>
+    
+    <item>
+      <title>Java实现Dijkstra求最短路径贪心算法</title>
+      <link>https://blog.coderwu.com/posts/algorithm-dijkstra/</link>
+      <pubDate>Thu, 01 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/algorithm-dijkstra/</guid>
+      <description>贪心算法的基本思想是找出整体中的局部的最优解，将这些局部最优解整合起来形成总的一个最优解。使用贪心算法的问题需满足下面的两个性质：
+ 求整体的最优解可以通过求局部的最优解来解决（贪心选择性质）。 整体被划分为多个局部，这些局部具有最优解（最优子结构性质）。  Dijkstra求最短路径算法：
+ 假设带权有向图G的顶点集合为V，起始点为V0。 初始S={V0}，T=V-S={其余顶点}，其中集合S表示已经计算出最短距离的顶点，T是还没计算的剩余顶点。 初始化V0到其余各点的距离，D(V0,Vi)代表V0到Vi的最短距离，按如下规则。 若V0可以直接到达某个顶点Vi,则将边的权值赋给(V0,Vi)，否则D(V0,Vi)=∞。 从T中选取一个与S中顶点有关联（直接相连）且权值最小的顶点W（这里用到了贪心法思想），加入到S中。 以W作为中间点，若V0到T中某个顶点Vi距离变短，则修改D(V0,Vi)的值。 重复5）和6）直到T为空。  代码：
+/** * Dijkstra 算法 * Created by Jehu on 11/6/16. */ public class Dijkstra { private int [][]weight; private int start; public Dijkstra(int [][]weight, int start) { this.weight = weight; this.start = start; } /** * 开始贪心寻找最短路径 * @return int[] 表示从start到对应顶点的最短路径长度 */ public int[] start() { int n = weight.length;//顶点数  int []shortPath = new int[n];//存放最短路径  String []path = new String[n];//用字符表示路径  String thePath = &amp;#34;1&amp;#34;;//最短路径  int []visited = new int[n]; //标记是否已经找到最短路径 1表示找到，0表示未找到  //初始化起始顶点  shortPath[this.</description>
+    </item>
+    
+  </channel>
+</rss>

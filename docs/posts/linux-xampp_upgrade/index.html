@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.66.0" />
+  <meta name="generator" content="Hugo 0.72.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="author" content="coderWu" />
   <meta property="og:url" content="https://blog.coderwu.com/posts/linux-xampp_upgrade/" />
-  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-xampp_upgrade/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://blog.coderwu.com/posts/linux-xampp_upgrade/" /><link rel="alternate" type="application/atom+xml" href="https://blog.coderwu.com/index.xml" title="Blog">
+
+  <script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -17,8 +19,8 @@
            "@id": "https:\/\/blog.coderwu.com\/"
       },
       "articleSection" : "posts",
-      "name" : "Linux | xampp集合环境安装新版本upgrade",
-      "headline" : "Linux | xampp集合环境安装新版本upgrade",
+      "name" : "xampp集合环境安装新版本upgrade",
+      "headline" : "xampp集合环境安装新版本upgrade",
       "description" : "xampp是集合环境安装包，安装apache，mysql，php服务器环境。\n最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。\n如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。\n  首先备份原本的安装目录\/opt\/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。\n$ cd \/opt\/lampp $ zip -r etc.zip etc\/* $ zip -r var.zip var\/* $ mv *.zip ~\/\n  卸载原本的lampp\n$ .\/uninstall $ cd .. $ rm -rf lampp\n  安装新版本的lampp\n  还原备份的文件\n$ cd \/opt\/lampp $ mv ~\/*.zip .\/ $ unzip etc.zip .\/ $ unzip var.zip .\/ $ cd var\/mysql $ chown -R mysql *\n还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。\n  重启服务\n$\/opt\/lampp\/lampp restart",
       "inLanguage" : "en-US",
       "author" : "coderWu",
@@ -27,15 +29,28 @@
       "accountablePerson" : "coderWu",
       "copyrightHolder" : "coderWu",
       "copyrightYear" : "2017",
-      "datePublished": "2017-09-13 00:00:00 \x2b0000 UTC",
-      "dateModified" : "2017-09-13 00:00:00 \x2b0000 UTC",
+      "datePublished": "2017-09-13 00:00:00 \u002b0000 UTC",
+      "dateModified" : "2017-09-13 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/blog.coderwu.com\/posts\/linux-xampp_upgrade\/",
-      "keywords" : [ "Blog", "coderWu" ]
+      "keywords" : [  ]
   }
 </script>
-<title>Linux | xampp集合环境安装新版本upgrade - coderWu</title>
-  <meta property="og:title" content="Linux | xampp集合环境安装新版本upgrade - coderWu" />
+<title>xampp集合环境安装新版本upgrade - Blog</title>
+  <meta property="og:title" content="xampp集合环境安装新版本upgrade - Blog" />
   <meta property="og:type" content="article" />
+  <meta property="og:description" content="xampp是集合环境安装包，安装apache，mysql，php服务器环境。
+最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。
+如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。
+  首先备份原本的安装目录/opt/lampp下的etc和var两个文件夹，如果网站根目录和ssl配置目录也在lampp安装目录下，同样进行备份。
+$ cd /opt/lampp $ zip -r etc.zip etc/* $ zip -r var.zip var/* $ mv *.zip ~/
+  卸载原本的lampp
+$ ./uninstall $ cd .. $ rm -rf lampp
+  安装新版本的lampp
+  还原备份的文件
+$ cd /opt/lampp $ mv ~/*.zip ./ $ unzip etc.zip ./ $ unzip var.zip ./ $ cd var/mysql $ chown -R mysql *
+还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。
+  重启服务
+$/opt/lampp/lampp restart" />
   <meta name="description" content="xampp是集合环境安装包，安装apache，mysql，php服务器环境。
 最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。
 如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。
@@ -49,57 +64,56 @@ $ cd /opt/lampp $ mv ~/*.zip ./ $ unzip etc.zip ./ $ unzip var.zip ./ $ cd var/m
 还原过程中选择替换新安装的文件，如果备份了网站根目录和ssl配置目录，还原到对应的位置。
   重启服务
 $/opt/lampp/lampp restart" />
+  <meta property="og:locale" content="en-us" />
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow-night.min.css"
-  />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="coderWu">
-  
-  <script>
-    
 
-    (function(undefined) {}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
 
   <script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?fe74bb2a8cb537d5628557ca78d914ff";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm, s);})();</script>
 </head>
 
-
-  <body>
-    <article class="post Chinese" id="article">
-      <div class="row">
-        <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-          <a href="/">
-            <div class="head-line"></div>
-          </a>
-          <header class="post-header">
-            <h1 class="post-title">Linux | xampp集合环境安装新版本upgrade</h1>
-            <div class="row">
-              <div class="col-xs-6">
-                <time class="post-date" datetime="2017-09-13 00:00:00 UTC">
-                  13 Sep 2017
-                </time>
-              </div>
-              <div class="col-xs-6">
-                <div class="post-author">
-                  <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
-                </div>
-              </div>
+<body>
+  <article class="post Chinese" id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">xampp集合环境安装新版本upgrade</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-09-13 00:00:00 UTC">
+                13 Sep 2017
+              </time>
+              
             </div>
-          </header>
-    
-          <div class="post-content markdown-body">
-            <p>xampp是集合环境安装包，安装apache，mysql，php服务器环境。</p>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.coderwu.com/">@coderWu</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>xampp是集合环境安装包，安装apache，mysql，php服务器环境。</p>
 <p>最近想升级xampp集合安装的httpd，但是因为是集合安装所以不能单模块升级，如果重新单独安装httpd弃掉原来的，又会有vhost配置，ssl等一堆麻烦事。</p>
 <p>如果重新安装最新版本的xampp集合环境则会造成原来的xampp中的apache配置和mysql数据库的丢失等问题，但是经过测试是可以恢复原本的apache配置和mysql数据库。</p>
 <ol>
@@ -136,24 +150,66 @@ $ chown -R mysql *</p>
 </ol>
 <p>升级完成</p>
 
-          </div>
-          
         </div>
-      </div>
-    </article>
 
-    <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/linux/">
+                Linux
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://blog.coderwu.com/" target="_blank">Blog</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/coder-wu/" target="_blank">Github</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
-  </body>
+  
+
+</body>
+
 </html>

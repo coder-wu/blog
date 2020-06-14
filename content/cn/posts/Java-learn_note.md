@@ -1,7 +1,7 @@
 ---
-title: Java | 学习笔记
+title: 学习笔记
 date: 2017-04-19
-type: "post"
+categories: ['Java']
 draft: false
 ---
 

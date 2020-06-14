@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PHP on Blog</title>
+    <link>https://blog.coderwu.com/categories/php/</link>
+    <description>Recent content in PHP on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.coderwu.com/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typecho根据分类设置访问密码</title>
+      <link>https://blog.coderwu.com/posts/php-typecho_category_pwd/</link>
+      <pubDate>Wed, 21 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-typecho_category_pwd/</guid>
+      <description>插件代码和使用：typecho-pwd-plugin</description>
+    </item>
+    
+    <item>
+      <title>闲来无事写个知乎爬虫</title>
+      <link>https://blog.coderwu.com/posts/php-zhihu_crawling/</link>
+      <pubDate>Tue, 25 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-zhihu_crawling/</guid>
+      <description>知乎刷多了，就想做点好玩的&amp;hellip;&amp;hellip; 可以爬知乎某个问题下的所有回答中所包含的图片。 错误没有完全处理，容错性可能不太好。 代码：
+&amp;lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2017/4/25 * Time: 18:06 */ class Zhihu { private $hasDone = 0; private $question; function __construct(string $question) { $this-&amp;gt;question = $question; if (!file_exists(&amp;#34;image/&amp;#34; . $this-&amp;gt;question)) { mkdir (&amp;#34;image/&amp;#34; . $this-&amp;gt;question); } } public function getHasDone(): int{ return $this-&amp;gt;hasDone; } public function setHasDone(int $hasDone){ $this-&amp;gt;hasDone = $hasDone; } public function saveImg(array $content) { if (isset($content[&amp;#39;data&amp;#39;])) { foreach ($content[&amp;#39;data&amp;#39;] as $key =&amp;gt; $value) { preg_match_all(&amp;#34;/&amp;lt;img.</description>
+    </item>
+    
+    <item>
+      <title>模拟微信发送消息的一个Demo</title>
+      <link>https://blog.coderwu.com/posts/php-wechat/</link>
+      <pubDate>Sat, 24 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/php-wechat/</guid>
+      <description>模拟在微信客户端发送信息到后台的过程用来微信测试，只有部分信息类型，其他的可以根据需求模仿例子添加，Demo可以直接粘贴使用
+示例代码：
+&amp;lt;?php /** * Created by PhpStorm. * User: Jehu * Date: 2016/12/24 * Time: 11:47 */ class WeChatPost{ private $event = &amp;#34;&amp;#34;; private $content = &amp;#34;&amp;#34;; private $time; /** * WeChatPost constructor. * @param $event String 事件类型 * @param $url String 链接 * @param $content array(&amp;#34;标签名&amp;#34; =&amp;gt; &amp;#34;内容&amp;#34;) * 发送的内容 * 例发送地理位置 * array(&amp;#34;Location_X&amp;#34; =&amp;gt; 1.29290, &amp;#34;Location_Y&amp;#34; =&amp;gt; 1.29290, &amp;#34;Scale&amp;#34; =&amp;gt; 20, &amp;#34;Label&amp;#34; =&amp;gt; &amp;#34;位置信息&amp;#34;) * 发送文字 * array(&amp;#34;Content&amp;#34; =&amp;gt; &amp;#34;text&amp;#34;) */ public function __construct($event, $url, $content){ $this-&amp;gt;event = $event; $this-&amp;gt;url = $url; $this-&amp;gt;content = $content; $this-&amp;gt;time = time(); } /** * 把要发送的内容处理为微信可识别的xml数据 * @return string 处理完的xml数据 */ private function xml(){ $xml = &amp;#34;&amp;lt;xml&amp;gt; &amp;lt;ToUserName&amp;gt;100012&amp;lt;/ToUserName&amp;gt; &amp;lt;FromUserName&amp;gt;100012&amp;lt;/FromUserName&amp;gt; &amp;lt;CreateTime&amp;gt;{$this-&amp;gt;time}&amp;lt;/CreateTime&amp;gt; &amp;lt;MsgType&amp;gt;{$this-&amp;gt;event}&amp;lt;/MsgType&amp;gt; {$this-&amp;gt;content()}&amp;lt;MsgId&amp;gt;1234567890123456&amp;lt;/MsgId&amp;gt; &amp;lt;/xml&amp;gt;&amp;#34;; return $xml; } /** * 根据信息类型处理剩余的信息 * @return null|string */ private function content() { switch ($this-&amp;gt;event) { case &amp;#34;text&amp;#34; : return &amp;#34;&amp;lt;Content&amp;gt;{$this-&amp;gt;content[&amp;#34;Content&amp;#34;]}&amp;lt;/Content&amp;gt;&amp;#34;; case &amp;#34;image&amp;#34; : return &amp;#34;&amp;lt;PicUrl&amp;gt;{$this-&amp;gt;content[&amp;#34;PicUrl&amp;#34;]}&amp;lt;/PicUrl&amp;gt;&amp;#34;; case &amp;#34;link&amp;#34; : return &amp;#34;&amp;lt;Title&amp;gt;{$this-&amp;gt;content[&amp;#34;Title&amp;#34;]}&amp;lt;/Title&amp;gt; &amp;lt;Description&amp;gt;{$this-&amp;gt;content[&amp;#34;Description&amp;#34;]}&amp;lt;/Description&amp;gt; &amp;lt;Url&amp;gt;{$this-&amp;gt;content[&amp;#34;Url&amp;#34;]}&amp;lt;/Url&amp;gt;&amp;#34;; case &amp;#34;location&amp;#34; : return &amp;#34;&amp;lt;Location_X&amp;gt;{$this-&amp;gt;content[&amp;#34;Location_X&amp;#34;]}&amp;lt;/Location_X&amp;gt; &amp;lt;Location_Y&amp;gt;{$this-&amp;gt;content[&amp;#34;Location_Y&amp;#34;]}&amp;lt;/Location_Y&amp;gt; &amp;lt;Scale&amp;gt;{$this-&amp;gt;content[&amp;#34;Scale&amp;#34;]}&amp;lt;/Scale&amp;gt; &amp;lt;Label&amp;gt;{$this-&amp;gt;content[&amp;#34;Label&amp;#34;]}&amp;lt;/Label&amp;gt;&amp;#34;; case &amp;#34;event&amp;#34; : return &amp;#34;&amp;lt;Event&amp;gt;{$this-&amp;gt;content[&amp;#34;Event&amp;#34;]}&amp;lt;/Event&amp;gt;&amp;#34;; default : return null; } } /** * 模拟post过程 * @return mixed */ private function post(){ $ch = curl_init(); curl_setopt_array($ch, array( CURLOPT_URL =&amp;gt; $this-&amp;gt;url, CURLOPT_RETURNTRANSFER =&amp;gt; true, CURLOPT_HTTPHEADER =&amp;gt; [ &amp;#34;Content-type: text/xml&amp;#34; ], CURLOPT_POST =&amp;gt; true, CURLOPT_POSTFIELDS =&amp;gt; $this-&amp;gt;xml() )); $result = curl_exec($ch); if (curl_errno($ch)) { print curl_error($ch); } curl_close($ch); return $result; } /** * 接收返回的信息，并处理为字符串 * @return string */ public function response(){ $response = &amp;#39;&amp;#39;; $postObj = simplexml_load_string($this-&amp;gt;post(), &amp;#39;SimpleXMLElement&amp;#39;, LIBXML_NOCDATA); foreach ((array)$postObj as $key =&amp;gt; $value) { $response .</description>
+    </item>
+    
+  </channel>
+</rss>

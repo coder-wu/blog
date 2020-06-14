@@ -1,7 +1,7 @@
 ---
-title: Spring | Spring GET方法传参省略@RequestParam注解
+title: Spring GET方法传参省略@RequestParam注解
 date: 2018-07-12
-type: "post"
+categories: ['Spring']
 draft: false
 ---
 

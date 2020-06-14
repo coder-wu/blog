@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Blog</title>
+    <link>https://blog.coderwu.com/categories/java/</link>
+    <description>Recent content in Java on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 19 Apr 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.coderwu.com/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>学习笔记</title>
+      <link>https://blog.coderwu.com/posts/java-learn_note/</link>
+      <pubDate>Wed, 19 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.coderwu.com/posts/java-learn_note/</guid>
+      <description>空引用（null）只能转换成引用类型，不能转换成基本类型，不要把null赋值给基本数据类型变量。
+  Java堆内存是运行时数据区，存储类的实例（对象）。
+  break后跟一个标签可跳出外层循环：
+ outer: for ( ; ; ) { for ( ; ; ) { ··· break outer; } }    Java方法的参数传递方式只有一种（值传递），将实际参数值的副本（复制品）传入方法内，而参数本身不会受到任何影响。当参数为引用类型时，因传递的是引用地址，堆中并未复制出一个相同的对象，所以操作的是同一个对象。
+  方法重载：同一个类中方法名相同，参数列表不同（两同一不同），方法返回值，修饰符与方法重载无关。
+  定义局部变量后，系统并未为这个变量分配空间，直到为这个变量赋值，才会为局部变量分配内存。
+  尽可能缩小局部变量作用范围，局部变量的作用范围越小它在内存里停留的时间就越短，程序运行性能越好。
+  访问控制符protected，即可以被同一个包中其他类访问，也可以被不同包中的子类访问。
+  静态导入使用import static语句，导入指定类的某个静态Filed、方法或全部的静态Filed、方法。
+    单个：import static package.subpackage...ClassName.fieldName|methodName; 全部：import static package.subpackage...ClassName.*;     常量池（constant pool）专门用于管理在编译期被确定并被保存在已编译的.class文件中的一些数据。它包括了关于类、方法、接口中的常量，还包括字符串常量。
+  对于外部类而言，其上一级为包，所以private和protected访问控制符对于外部类没有意义，外部类只能有两种访问控制级别：public和默认
+  如果一个类要被声明为static的，只有一种情况，就是静态内部类。</description>
+    </item>
+    
+  </channel>
+</rss>

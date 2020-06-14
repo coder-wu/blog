@@ -1,7 +1,7 @@
 ---
-title: PHP | 模拟微信发送消息的一个Demo
+title: 模拟微信发送消息的一个Demo
 date: 2016-12-24
-type: "post"
+categories: ['PHP']
 draft: false
 ---
 

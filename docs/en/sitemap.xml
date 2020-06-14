@@ -3,20 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.coderwu.com/en/categories/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="cn"
-                href="https://blog.coderwu.com/categories/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://blog.coderwu.com/en/categories/"
-                />
-  </url>
-  
-  <url>
     <loc>https://blog.coderwu.com/en/</loc>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +13,20 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://blog.coderwu.com/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://blog.coderwu.com/en/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://blog.coderwu.com/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://blog.coderwu.com/en/categories/"
                 />
   </url>
   
