@@ -1,8 +1,6 @@
-# 人生建议
+# FBI Warning
 
 <!-- properties
-tag: 个人
-tag: 警告
 created: 2023-03-26 00:45:04
 -->
 
