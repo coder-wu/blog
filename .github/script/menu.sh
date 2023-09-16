@@ -12,9 +12,10 @@ tag_dir="$project_dir/tags/"
 menu_dir="$project_dir/"
 
 summary_file="$menu_dir/MENU.md"
-echo "# Menu" >$summary_file
+echo "# Summary" >$summary_file
 
 echo "" >>"$summary_file"
+echo "## 最新" >>$summary_file
 echo "* 最新" >>$summary_file
 # 遍历所有 markdown 文件
 docs=()
@@ -84,6 +85,7 @@ for tag in "${tags[@]}"; do
 done
 
 echo "" >>"$summary_file"
+echo "## 分类" >>"$summary_file"
 echo "* 分类" >>"$summary_file"
 for tag in "${tags[@]}"; do
 	echo "  * [$tag](tags/$(get_md5 $tag).md)" >>"$summary_file"
