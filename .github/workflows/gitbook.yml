@@ -1,0 +1,30 @@
+name: Generate summary and tags
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Git user
+        run: |
+          git config --global user.name "coderWu"
+          git config --global user.email "coderwumail@gmail.com"
+
+      - name: Run script
+        run: |
+          chmod +x ./.github/script/menu.sh
+          cd ./.github/script/ && ./menu.sh
+
+      - name: Commit changes
+        run: |
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Update summary and tags"
+          git push
