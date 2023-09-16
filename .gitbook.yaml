@@ -1,5 +1,4 @@
 root: ./
 
 ​structure:  
-    readme: ''
-    summary: MENU.md​
+  summary: MENU.md​
