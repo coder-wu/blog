@@ -1,9 +1,9 @@
-name: Generate summary and tags
+name: Generate menu and tags
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   update:
