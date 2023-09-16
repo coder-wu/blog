@@ -11,8 +11,8 @@ doc_dir="$project_dir/docs/"
 tag_dir="$project_dir/tags/"
 menu_dir="$project_dir/"
 
-summary_file="$menu_dir/SUMMARY.md"
-echo "# Summary" >$summary_file
+summary_file="$menu_dir/MENU.md"
+echo "# Menu" >$summary_file
 
 echo "" >>"$summary_file"
 echo "* 最新" >>$summary_file
@@ -90,4 +90,4 @@ for tag in "${tags[@]}"; do
 done
 
 echo "" >>"$summary_file"
-echo "* [关于](about.md)" >>"$summary_file"
+echo "* [关于](ABOUT.md)" >>"$summary_file"
