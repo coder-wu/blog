@@ -11,7 +11,7 @@ doc_dir="$project_dir/docs/"
 tag_dir="$project_dir/tags/"
 menu_dir="$project_dir/"
 
-summary_file="$menu_dir/MENU.md"
+summary_file="$menu_dir/SUMMARY.md"
 echo "# Summary" >$summary_file
 
 echo "" >>"$summary_file"
