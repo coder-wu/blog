@@ -94,3 +94,60 @@ for(int i = 0; i < 100; i++) {
 - OO(object oriented，面向对象)是抽象数据，FP(functional programming，函数式编程)是抽象行为。
 
 - “不可变对象和无副作用” 范式，函数式语言作为并行编程的解决方案。
+
+- Java 8让函数式编程更简单，不过我们要确保一切是final的，同时你的所有方法和函数没有副作用。
+
+- 通过传入所有方法都适用的 Consumer 来避免重复代码。
+  ```java
+  static void test(String testName, Consumer<Optional<String>> cos) {
+      System.out.println(" === " + testName + " === ");
+      cos.accept(...);
+  }
+  ```
+- 我们不能通过传递null到of()来创建Optional对象。最安全的方法是，使用ofNullable()来优雅地处理null。
+
+```mermaid
+graph TB
+
+subgraph Create
+  direction TB
+  subgraph Stream
+    of
+    generate
+    iterate
+  end
+  Arrays.stream
+  Collection.stream
+end
+
+subgraph Intermediate
+direction TB
+  peek
+  sort
+  distinct
+  _filter[filter]
+  _map[map]
+end
+
+subgraph Terminal
+direction TB
+  toArray
+  _forEach[forEach]
+  collect
+  _reduce[reduce]
+  match
+  _find[find]
+  count
+  max
+  min
+  average
+end
+
+Create ==> Intermediate
+Intermediate ==> Terminal 
+
+```
+
+## 集合
+
+![Alt text](image.png)
