@@ -152,7 +152,7 @@ Intermediate ==> Terminal
 
 ## 集合
 
-![Alt text](image.png)
+![](resources/2023-10-14-10-45-12.png)
 
 ## 异常
 

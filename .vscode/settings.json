@@ -6,4 +6,6 @@
             "strings": "off"
         }
     },
+    "pasteImage.basePath": "${currentFileDir}",
+    "pasteImage.path": "${currentFileDir}/resources/",
 }
