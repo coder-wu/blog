@@ -26,3 +26,4 @@ InnerClass --> Package
 InnerClass --> Protected
 InnerClass --> Private
 ```
+# 线程模型
