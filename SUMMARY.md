@@ -1,6 +1,7 @@
 # Summary
 
 * 最新
+  * [反面单例](docs/stupid-singleton.md)
   * [人月神话](docs/the-mythical-man-month.md)
   * [SimpleDateFormat线程安全性](docs/simple-date-format-thread-safe.md)
   * [Java地图](docs/my-java.md)
