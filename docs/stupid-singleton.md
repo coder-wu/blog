@@ -60,15 +60,13 @@ Java中字段、代码块、构造函数初始化顺序是：
 
 ### 多线程下效率低
 
-估计后来的修改者发现了object为空的问题，所以在getInstance中又做了初始化。
-这样一来，多线程下就有问题，在getInstance上加个synchronized就好了。
+估计后来的修改者发现了object为空的问题，所以在getInstance中又做了初始化，这样一来，多线程下就有问题，在getInstance上加个synchronized就好了。
 
-getInstance是static的，这个时候配合synchronized锁的就是StupidSingleton.class。
-多线程下效率必然低。
+getInstance是static的，这个时候配合synchronized锁的就是StupidSingleton.class，多线程下效率必然低。
 
 ## 修改方案
 
-1. 把instance的初始化放在所以static变量定义的最后或者在静态变量定义时直接初始化，不在构造函数中初始化。
+1. 把instance的初始化放在所有static变量定义的最后或者在静态变量定义时直接初始化，不在构造函数中初始化。
 2. 删除getInstance的synchronized。
 3. 删除getInstance中对object的控制判断和初始化。
 
