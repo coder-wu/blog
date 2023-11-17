@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author : coderWu
  * @since : 2023/11/17
  **/
 public class StupidSingleton {
