@@ -1,6 +1,7 @@
 # Summary
 
 * 最新
+  * [接口适配](docs/xslt-case.md)
   * [反面单例](docs/stupid-singleton.md)
   * [人月神话](docs/the-mythical-man-month.md)
   * [SimpleDateFormat线程安全性](docs/simple-date-format-thread-safe.md)
