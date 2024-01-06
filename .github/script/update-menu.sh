@@ -1,6 +1,6 @@
 #!/bin/bash
 
-current_dir=$(dirname "$1")
+current_dir=$(dirname "$0")
 project_dir=$(cd "$current_dir/../../" && pwd)
 
 function get_md5() {

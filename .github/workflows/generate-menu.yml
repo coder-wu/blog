@@ -20,8 +20,8 @@ jobs:
 
       - name: Run script
         run: |
-          chmod +x ./.github/script/menu.sh
-          cd ./.github/script/ && ./menu.sh
+          chmod +x ./.github/script/update-menu.sh
+          cd ./.github/script/ && ./update-menu.sh
 
       - name: Commit changes
         run: |
