@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import os
+import shutil
 import hashlib
 from datetime import datetime
 
@@ -11,10 +12,46 @@ doc_dir = os.path.join(project_dir, "docs")
 tag_dir = os.path.join(project_dir, "tags")
 summary_file = os.path.join(project_dir, "SUMMARY.md")
 
-sorted_docs = []
+docs= {}
 
 def get_md5(text):
     return hashlib.md5(text.encode()).hexdigest()
+
+# Read all markdown files and sort order by create time
+def load_markdown_files():
+    global docs
+
+    for filename in os.listdir(doc_dir):
+        if not filename.endswith(".md"):
+            continue
+
+        doc = {}
+        doc['tags'] = set()
+
+        file_path = os.path.join(doc_dir, filename)
+        with open(file_path, "r") as file:
+            title = file.readline().lstrip("#").strip()
+            doc['title'] = title
+
+            created = None
+            for line in file:
+                if line.startswith("created:"):
+                    created = line.split("created:")[1].strip()
+                if line.startswith("tag:"):
+                    tag = line.split(":")[1].strip()
+                    doc['tags'].add(tag)
+                if line.startswith("-->"):
+                    break
+
+            if created:
+                try:
+                    timestamp = int(datetime.strptime(created,"%Y-%m-%d %H:%M:%S").timestamp())
+                except ValueError:
+                    timestamp = int(datetime.strptime(created,"%Y/%m/%d %H:%M:%S").timestamp())
+                doc['timestamp'] = timestamp
+                docs[filename] = doc
+
+    docs = sorted(docs.items(), key=lambda x: x[1]['timestamp'], reverse=True)
 
 # Generate SUMMARY file
 def create_summary():
@@ -23,75 +60,43 @@ def create_summary():
 
 # Generate all blogs list
 def generate_list():
-    with open(os.path.join(doc_dir, "list.md"), "w") as list_file:
-        list_file.write("## 列表 - List\n")
+    with open(summary_file, "a") as summary:
+        summary.write("[列表 - List](./LIST.md)\n")
 
-    docs = []
+    list_file_path=os.path.join(project_dir, "LIST.md")
+    with open(list_file_path, "w") as list_file:
+        list_file.write("## 列表 - List\n\n")
 
-    for filename in os.listdir(doc_dir):
-        if filename.endswith(".md"):
-            file_path = os.path.join(doc_dir, filename)
-
-            with open(file_path, "r") as file:
-                created = None
-                for line in file:
-                    if line.startswith("created:"):
-                        created = line.split("created:")[1].strip()
-                        print(created)
-                        break
-
-                if created:
-                    try:
-                        timestamp = int(datetime.strptime(created,"%Y-%m-%d %H:%M:%S").timestamp())
-                    except ValueError:
-                        timestamp = int(datetime.strptime(created,"%Y/%m/%d %H:%M:%S").timestamp())
-                    docs.append((file_path, timestamp))
-
-    sorted_docs = sorted(docs, key=lambda x: x[1], reverse=True)
-
-    with open(os.path.join(doc_dir, "list.md"), "a") as list_file:
-        for file_path, _ in sorted_docs:
-            with open(file_path, "r") as file:
-                title = file.readline().lstrip("#").strip()
-                filename = os.path.basename(file_path)
-                list_file.write(f"* [{title} - {created}](./{filename})\n")
+    with open(list_file_path, "a") as list_file:
+        for filename, properties in docs:
+            created_time = properties['timestamp']
+            list_file.write(f"* [{properties['title']} - {created_time}](docs/{filename})\n")
 
 # Generate categories
 def generate_categories():
     with open(summary_file, "a") as summary:
-        summary.write("# 分类 - Categories\n")
+        summary.write("# 分类 - Categories\n\n")
+
+    shutil.rmtree(tag_dir)
+    os.makedirs(tag_dir)
 
     tags = set()
+    for filename, properties in docs:
+        tags = properties['tags']
+        for tag in tags:
+            tag_filename = f"{get_md5(tag)}.md"
+            tag_filepath = os.path.join(tag_dir, tag_filename)
 
-    for filename in os.listdir(doc_dir):
-        if filename.endswith(".md"):
-            file_path = os.path.join(doc_dir, filename)
+            if not os.path.exists(tag_filepath):
+                with open(summary_file, "a") as summary:
+                    summary.write(f"  * [{tag}](tags/{tag_filename})\n")
 
-            with open(file_path, "r") as file:
-                for line in file:
-                    if line.startswith("tag:"):
-                        tag = line.split(":")[1].strip()
-                        tags.add(tag)
+                with open(tag_filepath, "w") as tag_file:
+                    tag_file.write(f"## {tag}\n\n")
 
-    for tag in tags:
-        tag_filename = os.path.join(tag_dir, f"{get_md5(tag)}.md")
-        with open(tag_filename, "w") as tag_file:
-            tag_file.write(f"## {tag}\n")
+            with open(tag_filepath, "a") as tag_file:
+                tag_file.write(f"* [{properties['title']}](../docs/{filename})\n")
 
-        with open(tag_filename, "a") as tag_file:
-            for filename in os.listdir(doc_dir):
-                if filename.endswith(".md"):
-                    file_path = os.path.join(doc_dir, filename)
-
-                    with open(file_path, "r") as file:
-                        file_tags = [line.split(":")[1].strip() for line in file if line.startswith("tag:")]
-
-                        if tag in file_tags:
-                            title = file.readline().lstrip("#").strip()
-                            tag_file.write(f"* [{title}](../docs/{filename})\n")
-
-        with open(summary_file, "a") as summary:
-            summary.write(f"  * [{tag}](tags/{get_md5(tag)}.md)\n")
 
 def generate_about():
     with open(summary_file, "a") as summary:
@@ -102,6 +107,7 @@ def separate():
         summary.write("\n---\n\n")
 
 if __name__ == "__main__":
+    load_markdown_files()
     create_summary()
     generate_list()
     separate()
