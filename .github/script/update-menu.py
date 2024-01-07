@@ -77,7 +77,7 @@ def generate_categories():
 
     tags = set()
     for filename, properties in docs:
-        tags = properties['tags']
+        tags = sorted(properties['tags'])
         for tag in tags:
             tag_filename = f"{get_md5(tag)}.md"
             tag_filepath = os.path.join(tag_dir, tag_filename)

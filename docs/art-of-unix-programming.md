@@ -2,7 +2,6 @@
 > 《Unix编程艺术》读书笔记
 
 <!-- properties
-tag: Linux
 tag: Unix
 tag: 读书笔记 
 created: 2023/08/30 21:59:22
