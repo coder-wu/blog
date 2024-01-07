@@ -61,16 +61,11 @@ def create_summary():
 # Generate all blogs list
 def generate_list():
     with open(summary_file, "a") as summary:
-        summary.write("[列表 - List](./LIST.md)\n")
-
-    list_file_path=os.path.join(project_dir, "LIST.md")
-    with open(list_file_path, "w") as list_file:
-        list_file.write("## 列表 - List\n\n")
-
-    with open(list_file_path, "a") as list_file:
+        summary.write("# 列表 - List\n\n")
         for filename, properties in docs:
-            created_time = properties['timestamp']
-            list_file.write(f"* [{properties['title']} - {created_time}](docs/{filename})\n")
+            timestamp = properties['timestamp']
+            formatted_time = datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d")
+            summary.write(f"  * [{properties['title']} - *{formatted_time}*](docs/{filename})\n")
 
 # Generate categories
 def generate_categories():
