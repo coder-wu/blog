@@ -2,7 +2,7 @@
 
 # 列表 - List
 
-  * [:computer: Command 2023 - *2024-01-07*](docs/command-2023.md)
+  * [💻 Command 2023 - *2024-01-07*](docs/command-2023.md)
   * [接口适配 - *2023-12-02*](docs/xslt-case.md)
   * [反面单例 - *2023-11-17*](docs/stupid-singleton.md)
   * [人月神话 - *2023-10-10*](docs/the-mythical-man-month.md)
