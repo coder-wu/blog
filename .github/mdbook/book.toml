@@ -5,9 +5,17 @@ language = "en"
 multilingual = true
 src = "./"
 
+[preprocessor.toc]
+command = "mdbook-toc"
+render = ["html"]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
 [output.html]
 git-repository-url = "https://github.com/coder-wu/blog"
 no-section-label = true
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
 
 [output.html.fold]
 enable = true   # whether or not to enable section folding
