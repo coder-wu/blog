@@ -2,6 +2,7 @@
 
 # 列表 - List
 
+  * [:computer: Command 2023 - *2024-01-07*](docs/command-2023.md)
   * [接口适配 - *2023-12-02*](docs/xslt-case.md)
   * [反面单例 - *2023-11-17*](docs/stupid-singleton.md)
   * [人月神话 - *2023-10-10*](docs/the-mythical-man-month.md)
@@ -16,14 +17,13 @@
 
 # 分类 - Categories
 
-  * [软件工程](tags/3c3866c4c45403e5e156503ee23c379a.md)
+  * [Linux](tags/edc9f0a5a5d57797bf68e37364743831.md)
   * [案例](tags/cf3e26640644d1c04f989d452a8ba6ec.md)
+  * [软件工程](tags/3c3866c4c45403e5e156503ee23c379a.md)
   * [Java](tags/d52387880e1ea22817a72d3759213819.md)
   * [读书笔记](tags/f44d4b523ff110f3126ff57530ea5253.md)
-  * [线程](tags/d276123c8bf8dabf3ae03a2a571acd43.md)
   * [脑图](tags/6079abe5532e6ad5c62882b3f7a1c72c.md)
   * [Unix](tags/6ec1bd1ea6a5d67a63b20c8f6172bddd.md)
-  * [Linux](tags/edc9f0a5a5d57797bf68e37364743831.md)
 
 ---
 
