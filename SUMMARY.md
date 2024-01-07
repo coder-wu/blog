@@ -23,7 +23,6 @@
   * [Java](tags/d52387880e1ea22817a72d3759213819.md)
   * [读书笔记](tags/f44d4b523ff110f3126ff57530ea5253.md)
   * [脑图](tags/6079abe5532e6ad5c62882b3f7a1c72c.md)
-  * [Unix](tags/6ec1bd1ea6a5d67a63b20c8f6172bddd.md)
 
 ---
 
