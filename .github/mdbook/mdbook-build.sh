@@ -22,12 +22,6 @@ cp "${project_dir}/SUMMARY.md" "${mdbook_dir}/"
 cp "${project_dir}/ABOUT.md" "${mdbook_dir}/"
 cp "${current_dir}/book.toml" "${mdbook_dir}/"
 
-for file in "${mdbook_dir}/docs/"*.md; do
-  echo "<!-- toc -->" > temp.md
-  cat "${file}" >> temp.md
-  mv temp.md "${file}"
-done
-
 mdbook-mermaid install "${mdbook_dir}"
 
 cd "${mdbook_dir}" || exit 1
