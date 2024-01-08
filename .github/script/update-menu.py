@@ -104,8 +104,9 @@ def separate():
 if __name__ == "__main__":
     load_markdown_files()
     create_summary()
+
+    generate_about()
+    separate()
     generate_list()
     separate()
     generate_categories()
-    separate()
-    generate_about()
