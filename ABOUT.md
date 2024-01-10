@@ -1,6 +1,10 @@
 # About
 
-> Email: coderwumail@gmail.com
+## Contact
+
+- ✉️ Email: coderwumail@gmail.com
+
+- 🐱 Github: [coderWu](https://github.com/coder-wu)
 
 ## License
 
