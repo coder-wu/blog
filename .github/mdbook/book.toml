@@ -9,6 +9,8 @@ src = "./"
 command = "mdbook-mermaid"
 
 [output.html]
+default-theme = "rust"
+preferred-dark-theme = "navy"
 git-repository-url = "https://github.com/coder-wu/blog"
 no-section-label = true
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
