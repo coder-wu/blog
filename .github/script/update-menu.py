@@ -65,7 +65,7 @@ def generate_list():
         for filename, properties in docs:
             timestamp = properties['timestamp']
             formatted_time = datetime.utcfromtimestamp(timestamp).strftime("%Y-%m-%d")
-            summary.write(f"  * [{properties['title']} - *{formatted_time}*](docs/{filename})\n")
+            summary.write(f"  * [{properties['title']}](docs/{filename})\n")
 
 # Generate categories
 def generate_categories():
