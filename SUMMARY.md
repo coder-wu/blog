@@ -6,7 +6,7 @@
 
 # 列表 - List
 
-  * [备份之旅 - An Interesting Story About Backup](docs/backup.md)
+  * [瞎折腾](docs/just-for-fun.md)
   * [💻 Command 2023](docs/command-2023.md)
   * [接口适配](docs/xslt-case.md)
   * [反面单例](docs/stupid-singleton.md)
