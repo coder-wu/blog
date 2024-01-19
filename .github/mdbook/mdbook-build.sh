@@ -20,7 +20,9 @@ cp -rf "${project_dir}/tags" "${mdbook_dir}/"
 
 cp "${project_dir}/SUMMARY.md" "${mdbook_dir}/"
 cp "${project_dir}/ABOUT.md" "${mdbook_dir}/"
+
 cp "${current_dir}/book.toml" "${mdbook_dir}/"
+cp -rf "${current_dir}/theme" "${mdbook_dir}/"
 
 mdbook-mermaid install "${mdbook_dir}"
 

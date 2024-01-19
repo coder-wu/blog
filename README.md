@@ -2,7 +2,7 @@
 
 ## 内容 - Content
 
-[目录-MENU](SUMMARY.md)
+[目录 - MENU](SUMMARY.md)
 
 ## Markdown格式 - Markdown Format
 
