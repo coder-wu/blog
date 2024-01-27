@@ -1,31 +1,30 @@
-# Blog 
+# Summary
 
-## 内容 - Content
+* [关于 - About](ABOUT.md)
 
-[目录 - MENU](SUMMARY.md)
+---
 
-## Markdown格式 - Markdown Format
+# 列表 - List
 
-markdown文件应包含以下properties注释配置文档属性，以便Actions脚本可以自动更新目录和分类。
+  * [瞎折腾](docs/just-for-fun.md)
+  * [💻 Command 2023](docs/command-2023.md)
+  * [接口适配](docs/xslt-case.md)
+  * [反面单例](docs/stupid-singleton.md)
+  * [人月神话](docs/the-mythical-man-month.md)
+  * [SimpleDateFormat线程安全性](docs/simple-date-format-thread-safe.md)
+  * [Java地图](docs/my-java.md)
+  * [麻三斤](docs/art-of-unix-programming.md)
+  * [On Java 8](docs/onjava8.md)
+  * [深入理解Java虚拟机](docs/jvm.md)
+  * [好言难劝该死鬼](docs/warning.md)
 
-> markdown files should contains the following comment, so that SUMMARY.md and tag files can be updated automatically.
+---
 
-```
-<!-- properties
-tag: 标签1
-tag: 标签2
-created: 2023/01/01 00:00:00
--->
-```
+# 分类 - Categories
 
-## Action流程 - Action Flow
-
-```mermaid
-graph LR
-
-menu(Update Summary and Tags)
-mdbook(Generate static files and publish to Github Pages)
-
-menu ---> mdbook
-
-```
+  * [案例](tags/cf3e26640644d1c04f989d452a8ba6ec.md)
+  * [Linux](tags/edc9f0a5a5d57797bf68e37364743831.md)
+  * [软件工程](tags/3c3866c4c45403e5e156503ee23c379a.md)
+  * [Java](tags/d52387880e1ea22817a72d3759213819.md)
+  * [读书笔记](tags/f44d4b523ff110f3126ff57530ea5253.md)
+  * [脑图](tags/6079abe5532e6ad5c62882b3f7a1c72c.md)

@@ -10,7 +10,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 project_dir = os.path.abspath(os.path.join(current_dir, "../../"))
 doc_dir = os.path.join(project_dir, "docs")
 tag_dir = os.path.join(project_dir, "tags")
-summary_file = os.path.join(project_dir, "SUMMARY.md")
+summary_file = os.path.join(project_dir, "README.md")
 
 docs= {}
 
