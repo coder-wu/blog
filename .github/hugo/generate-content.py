@@ -30,7 +30,7 @@ def generate_content():
             doc_file.readline()
             doc_content = doc_file.read()
             # 替换resources的路径
-            doc_content = re.sub("resources/", "../../resources/", doc_content)
+            doc_content = re.sub("resources/", "/resources/", doc_content)
 
         hugo_doc_path = os.path.join(hugo_language_path, filename)
         with open(hugo_doc_path, "w") as hugo_doc_file:
