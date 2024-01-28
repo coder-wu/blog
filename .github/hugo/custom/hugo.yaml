@@ -1,0 +1,69 @@
+baseURL: "https://blog.coderwu.com/"
+title: coderWu
+theme: [PaperMod]
+
+paginate: 10
+defaultContentLanguage: zh
+
+enableRobotsTXT: true
+enableEmoji: true
+
+languages:
+  zh:
+    languageCode: zh-CN
+    languageName: 中文
+    weight: 1
+    menu:
+      main:
+        - name: 关于
+          url: about.html
+          weight: 5
+        - name: 标签
+          url: tags
+          weight: 10
+
+  en:
+    languageCode: en-US
+    languageName: English
+    weight: 2
+    menu:
+      main:
+        - name: About
+          url: about.html
+          weight: 5
+        - name: Tags
+          url: tags
+          weight: 10
+
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  author: coderWu 
+
+  defaultTheme: auto
+  ShowShareButtons: false
+  ShowReadingTime: false
+  disableSpecial1stPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: false
+
+  assets:
+    disableHLJS: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
