@@ -16,10 +16,10 @@ languages:
     menu:
       main:
         - name: 关于
-          url: about
+          url: /about
           weight: 5
         - name: 标签
-          url: tags
+          url: /tags
           weight: 10
 
   en:
@@ -29,10 +29,10 @@ languages:
     menu:
       main:
         - name: About
-          url: about
+          url: /about
           weight: 5
         - name: Tags
-          url: tags
+          url: /tags
           weight: 10
 
 

@@ -1,7 +1,5 @@
 # 接口适配
 
-[EN](#interface-adaptation)
-
 <!-- properties
 tag: 软件工程
 tag: 案例
@@ -22,28 +20,4 @@ created:  2023-12-02 22:08:58
 
 最终采用引入XSLT的方案实现，这种修改对系统侵入性小且灵活。
 
-> Finally, XSLT is chosen, because it has minimal intrusion to the system and is more flexible.
-
 在业务系统中保证功能实现的前提下也要考虑可扩展性，可维护性。通过XSLT实现，当新增、修改接口时仅需要修改XSLT中代码。而且XSLT是纯文本，不涉及编译重新部署的麻烦，扩展和维护都很方便。
-
-
----
-
-# Interface Adaptation
-
-## Background
-
-After replacing the implementation framework for a WebService interface, request-response messages is different with the original implementation, such as namespace alias definitions, field order, hierarchy (whether it should have levels like in0), etc. Because the interface is widely used, it is necessary to ensure that the new interface is exactly the same as the original one.
-
-## Solution
-
-1. Reassemble message through interceptors or aspects, one implementation class for on interface.
-
-2. Use XSLT, define two interceptors that references to two XSLT files to process request and response requests, and implement specific format conversions in XSLT.
-
-## Conclusion
-
-Finally, XSLT is chosen, because it has minimal intrusion to the system and is more flexible.
-
-While implementing functions in business system, extension and maintenance are also should be considered. With XSLT, after adding or modifying interfaces, only XSLT code should be changed. Because XSLT code is plain text and doesn't require compilation, it's convenient to modify and deploy.
-

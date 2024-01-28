@@ -1,4 +1,4 @@
-# 💻 Command 2023
+# 💻 2023命令行记录
 
 <!-- properties
 tag: Linux
