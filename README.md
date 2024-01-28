@@ -2,8 +2,11 @@
 
 # 列表 - List
 
+  * [Just For Fun](docs/just-for-fun.en.md)
   * [瞎折腾](docs/just-for-fun.md)
-  * [💻 Command 2023](docs/command-2023.md)
+  * [💻 Command 2023](docs/command-2023.en.md)
+  * [💻 2023命令行记录](docs/command-2023.md)
+  * [Interface Adaptation](docs/xslt-case.en.md)
   * [接口适配](docs/xslt-case.md)
   * [反面单例](docs/stupid-singleton.md)
   * [人月神话](docs/the-mythical-man-month.md)
