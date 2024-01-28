@@ -46,9 +46,12 @@ params:
   author: coderWu 
 
   defaultTheme: auto
-  ShowShareButtons: false
-  ShowReadingTime: false
   disableSpecial1stPost: true
+
+  hideSummary: true
+  ShowReadingTime: false
+
+  ShowShareButtons: false
   displayFullLangName: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
