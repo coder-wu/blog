@@ -16,7 +16,7 @@ languages:
     menu:
       main:
         - name: 关于
-          url: about.html
+          url: about
           weight: 5
         - name: 标签
           url: tags
@@ -29,7 +29,7 @@ languages:
     menu:
       main:
         - name: About
-          url: about.html
+          url: about
           weight: 5
         - name: Tags
           url: tags

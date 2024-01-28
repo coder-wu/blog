@@ -22,3 +22,6 @@ cp "${current_dir}/custom/extend_head.html" "${build_dir}/blog/themes/PaperMod/l
 
 cd "${current_dir}" || exit 1
 ./generate-content.py
+
+cd "${build_dir}/blog" || exit 1
+hugo --minify
