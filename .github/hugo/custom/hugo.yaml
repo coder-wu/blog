@@ -1,5 +1,5 @@
 baseURL: "https://blog.coderwu.com/"
-title: coderWu
+title: Wu
 theme: [PaperMod]
 
 paginate: 10
@@ -16,7 +16,7 @@ languages:
     menu:
       main:
         - name: 关于
-          url: /about
+          url: ../about
           weight: 5
         - name: 标签
           url: tags
@@ -29,7 +29,7 @@ languages:
     menu:
       main:
         - name: About
-          url: /about
+          url: ../about
           weight: 5
         - name: Tags
           url: tags
@@ -43,7 +43,7 @@ outputs:
     - JSON
 
 params:
-  author: coderWu 
+  author: wu
 
   defaultTheme: auto
   disableSpecial1stPost: true

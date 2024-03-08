@@ -4,7 +4,7 @@
 
 - ✉️ Email: coderwumail@gmail.com
 
-- 🐱 Github: [coderWu](https://github.com/coder-wu)
+- 🐱 Github: [wu](https://github.com/coder-wu)
 
 ## License
 

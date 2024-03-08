@@ -43,7 +43,7 @@ import java.util.Scanner;
 /**
  * Code Forces
  * 803C - Maximal GCD
- * @author coderWu
+ * @author wu
  * Created in 下午8:43 17-9-14
  */
 public class MaximalGCD {
