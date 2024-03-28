@@ -15,8 +15,8 @@
   * [麻三斤](docs/art-of-unix-programming.md)
   * [On Java 8](docs/onjava8.md)
   * [深入理解Java虚拟机](docs/jvm.md)
-  * [好言难劝该死鬼](docs/warning.md)
   * [Warning](docs/warning.en.md)
+  * [好言难劝该死鬼](docs/warning.md)
 
 ---
 
