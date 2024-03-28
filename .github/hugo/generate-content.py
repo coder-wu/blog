@@ -13,9 +13,12 @@ hugo_blog_dir = os.path.abspath(os.path.join(common.project_dir, ".github/hugo/b
 
 def generate_content():
     hugo_content_path = os.path.join(hugo_blog_dir, "content")
+
+    # copy static content
     shutil.copy(common.project_dir + "/ABOUT.md", hugo_content_path)
     shutil.copytree(common.doc_dir + "/resources", hugo_content_path + "/resources")
 
+    # format article markdown files
     for filename, properties in common.docs:
         language = properties['language'] if 'language' in properties else "zh"
         hugo_language_path = os.path.join(hugo_content_path, language)
