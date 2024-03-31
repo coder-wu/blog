@@ -1,3 +1,0 @@
-- 阮一峰的网络日志 - rss - http://feeds.feedburner.com/ruanyifeng
-- 二丫讲梵 - rss - https://wiki.eryajf.net/rss.xml
-- 开源面对面 - rss - https://feeds.osf2f.net/osf2f.xml

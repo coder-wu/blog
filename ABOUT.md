@@ -6,6 +6,10 @@
 
 - 🐱 Github: [wu](https://github.com/coder-wu)
 
+## Subscriptions
+
+- [OPML](./Subscriptions.opml)
+
 ## License
 
 The source and documentation are released under the [CC BY-NC-SA 4.0 DEED

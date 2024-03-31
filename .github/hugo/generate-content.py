@@ -13,9 +13,13 @@ hugo_blog_dir = os.path.abspath(os.path.join(common.project_dir, ".github/hugo/b
 
 def generate_content():
     hugo_content_path = os.path.join(hugo_blog_dir, "content")
+    hugo_about_path = os.path.join(hugo_content_path, "about")
+    os.makedirs(hugo_about_path)
 
     # copy static content
     shutil.copy(common.project_dir + "/ABOUT.md", hugo_content_path)
+    shutil.copy(common.project_dir + "/Subscriptions.opml", hugo_about_path)
+
     shutil.copytree(common.doc_dir + "/resources", hugo_content_path + "/resources")
 
     # format article markdown files

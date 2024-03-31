@@ -24,9 +24,6 @@ languages:
         - name: RSS
           url: zh/index.xml
           weight: 3
-        - name: OPML
-          url: ../resources/subscriptions.opml
-          weight: 4
 
   en:
     languageCode: en-US
@@ -43,9 +40,6 @@ languages:
         - name: RSS
           url: en/index.xml
           weight: 3
-        - name: OPML
-          url: ../resources/subscriptions.opml
-          weight: 4
 
 outputs:
   home:
