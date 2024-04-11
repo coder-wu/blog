@@ -9,10 +9,10 @@ created: 2024-04-10 20:54:18
 
 > 3-2-1备份策略：3份副本，2种介质，1个异地。
 
-![](resources/2024-04-10-22-18-39.png)
+![](resources/2024-04-11-22-19-47.png)
 
 首先通过alist将百度云盘转换为WebDAV，接着通过rclone对接WebDAV，再在rclone上配置crypt实现文件加密，最终使用```rclone sync```将文件增量同步到云端。
 
 ![](resources/2024-04-10-22-45-49.png)
 
-rclone在Mac上以command的形式提供，因此修改了[Homelab](https://github.com/coder-wu/homelab)中的sync脚本，通过rclone实现同步。也在[Homelab](https://github.com/coder-wu/homelab)中添加了alist的k8s配置，通过容器运行alist服务。
+rclone以command的形式提供，因此修改了[Homelab](https://github.com/coder-wu/homelab)中的sync脚本，通过rclone实现同步。也在[Homelab](https://github.com/coder-wu/homelab)中添加了alist的k8s配置，通过容器运行alist服务。

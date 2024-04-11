@@ -10,7 +10,7 @@ I share an interesting story in ***Just For Fun*** about back up, I use TimeMach
 
 > 3-2-1 backup strategy: 3 copies, 2 media, 1 offsite.
 
-![](resources/2024-04-10-22-18-39.png)
+![](resources/2024-04-11-22-19-47.png)
 
 First I convert Baidu Netdisk service to WebDAV through alist, then connect to WebDAV with rclone. I also create a crypt configuration on rclone to encrypt file, and finally use ```rclone sync``` to incrementally synchronize files to Baidu Netdisk.
 
