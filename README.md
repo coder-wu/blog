@@ -3,6 +3,7 @@
 # 列表 - List
 
   * [使用rclone和alist实现云端备份](docs/backup.md)
+  * [Back up with rclone and alist](docs/backup.en.md)
   * [Just For Fun](docs/just-for-fun.en.md)
   * [瞎折腾](docs/just-for-fun.md)
   * [💻 Command 2023](docs/command-2023.en.md)
