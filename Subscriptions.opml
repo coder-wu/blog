@@ -10,12 +10,10 @@
       <outline type="rss" text="The NPR Politics Podcast" title="The NPR Politics Podcast" xmlUrl="https://feeds.npr.org/510310/podcast.xml" htmlUrl="https://www.npr.org/podcasts/510310/npr-politics-podcast"/>
     </outline>
     <outline text="Blog" title="Blog">
-      <outline type="rss" text="二丫讲梵" title="二丫讲梵" xmlUrl="https://wiki.eryajf.net/rss.xml" htmlUrl="https://wiki.eryajf.net"/>
       <outline type="rss" text="阮一峰的网络日志" title="阮一峰的网络日志" xmlUrl="http://feeds.feedburner.com/ruanyifeng" htmlUrl="http://www.ruanyifeng.com/blog/"/>
     </outline>
     <outline text="PodCast" title="PodCast">
       <outline type="rss" text="东腔西调" title="东腔西调" xmlUrl="http://www.ximalaya.com/album/41153937.xml" htmlUrl="https://www.ximalaya.com/album/41153937"/>
-      <outline type="rss" text="开源面对面" title="开源面对面" xmlUrl="https://feeds.osf2f.net/osf2f.xml" htmlUrl="https://osf2f.net/"/>
     </outline>
   </body>
 </opml>
